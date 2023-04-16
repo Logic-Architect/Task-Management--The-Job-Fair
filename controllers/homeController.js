@@ -1,4 +1,7 @@
 // ACTION TO HOME 
 module.exports.home = function(req,res){
-    return res.send('Configured Successfully');
+    return res.render('home',{
+        layout : 'homeLayout',
+        title : 'Job Fair'
+    })
 }

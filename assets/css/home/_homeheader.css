@@ -1,0 +1,23 @@
+/* HOME HEADER PROPERTIES  */
+.home-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0px;
+    border-bottom: 1px solid grey;
+}
+/* HEADING JOB FAIR  */
+.job-fair{
+    margin-left: 5px;
+}
+/* LOG MENU  */
+.log-menu{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.log-menu div{
+    margin: 5px;
+    padding: 5px;
+}

@@ -1,0 +1,10 @@
+.main{
+    height: 100vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#welcome-heading h1{
+    font-size: 4rem;
+}
