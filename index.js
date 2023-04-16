@@ -24,6 +24,9 @@ app.use(express.static('./assets'));
 // CONFIGURING READABILITY THROUGH POST REQUEST 
 app.use(express.urlencoded());
 
+// CONNECTING TO THE DATABASE 
+const db = require('./config/mongoose');
+
 // CONGIGURING ROUTES 
 app.use('/',require('./routes/index'));
 
