@@ -49,11 +49,6 @@ const companySchema = new mongoose.Schema({
         type : String,
         required : true
        }
-    ],
-    requisites :[
-        {
-            type : String
-        }
     ]
 },{
     timestamps : true  

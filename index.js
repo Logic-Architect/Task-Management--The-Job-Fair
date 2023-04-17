@@ -1,7 +1,7 @@
 // CONFIGURING EXPRESS APP 
 const express = require('express');
 const app = express();
-const port = 8000;
+const port = 9000;
 
 // CONFIGURING LAYOUTS 
 const expressLayouts = require('express-ejs-layouts');

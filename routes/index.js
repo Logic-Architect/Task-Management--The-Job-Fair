@@ -4,9 +4,11 @@ const router = express.Router();
 
 console.log('Router started successfully');
 
-const homecontroller = require('../controllers/homeController.js')
+const homeController = require('../controllers/homeController.js')
 
-router.get('/',homecontroller.home);
+router.get('/',homeController.home);
+router.get('/sign-in',homeController.signIn)
+router.get('/sign-up',homeController.signUp)
 router.use('/student',require('./student'));
 router.use('/company',require('./company'));
 router.use('/team-info',require('./team-info'))
