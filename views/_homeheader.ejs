@@ -21,16 +21,33 @@
             </ul>
         </nav>
         <div class="log-menu">
-            <div class="log-in">
-                <p>
-                    <a href="/sign-in">Sign In</a>
-                </p>
-            </div>
-            <div class="sign-up">
-                <p>
-                    <a href="/sign-up">Sign Up</a>
-                </p>
-            </div>
+            <%if (locals.user){%>
+                <%if(locals.user.type=='student'){%>
+                    <div class="log-in">
+                        <p>
+                            <a href="/student/sign-out">Sign Out</a>
+                        </p>
+                    </div>
+                    <%}else{%>
+                        <div class="log-in">
+                            <p>
+                                <a href="/company/sign-out">Company</a>
+                            </p>
+                        </div>
+                        <%}%>
+
+                <%}else{%>
+                    <div class="log-in">
+                        <p>
+                            <a href="/sign-in">Sign In</a>
+                        </p>
+                    </div>
+                    <div class="sign-up">
+                        <p>
+                            <a href="/sign-up">Sign Up</a>
+                        </p>
+                    </div>
+                    <%}%>
         </div>
 </header>
 

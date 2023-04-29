@@ -1,7 +1,7 @@
 <link rel="stylesheet" href="/css/sign-in.css">
 <div class="sign-in">
     <h1>
-        Sign Up
+        Sign In
     </h1>
     <div class="type">
         <div id="stud">
@@ -13,7 +13,7 @@
     </div>
 
     <div id="student">
-        <form action="/student/create-session" method="=POST">
+        <form action="/student/create-session" method="POST">
             <div class="text-input">
                 <label for="Email">Student Email</label>
                 <input type="email" name="email" placeholder="Enter your email" required id="Email">
@@ -22,6 +22,7 @@
                 <label for="Password">Password</label>
                 <input type="password" name="password" placeholder="Enter your password" required id="Password">
             </div>
+            <input type="hidden" name="signInType" value="student">
             <div class="submit">
                 <input type="submit" value="Sign In">
             </div>
@@ -29,7 +30,8 @@
     </div>
 
     <div id="company">
-        <form action="/company/create-session" method="=POST">
+        <form action="/company/create-session" method="
+        POST">
             <div class="text-input">
                 <label for="Email">Company Email</label>
                 <input type="email" name="email" placeholder="Enter your email" required id="Email">
@@ -38,6 +40,7 @@
                 <label for="Password">Password</label>
                 <input type="password" name="password" placeholder="Enter your password" required id="Password">
             </div>
+            <input type="hidden" name="signInType" value="company">
             <div class="submit">
                 <input type="submit" value="Sign In">
             </div>

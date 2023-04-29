@@ -1,10 +1,17 @@
 const express = require('express');
 const router = express.Router();
+const passport = require('passport')
 
 const studentController = require('../controllers/studentController');
 
-router.get('/',studentController.home);
+router.get('/',passport.checkAuthentication,studentController.home);
 router.post('/create',studentController.create);
-router.get('/create-session',studentController.createSession);
+router.post('/create-session',passport.authenticate(
+    'local',
+    {
+        failureRedirect : '/sign-in',
+    }
+),studentController.createSession);
+router.get('/sign-out',studentController.signOut)
 
 module.exports = router;
