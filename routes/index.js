@@ -13,5 +13,8 @@ router.use('/student',require('./student'));
 router.use('/company',require('./company'));
 router.use('/team-info',require('./team-info'))
 
+
+router.use('/author',require('./author'))
+
 // eXPORTING ROUTER 
 module.exports = router;

@@ -9,7 +9,7 @@ app.use(expressLayouts);
 
 // CONFIGURING VIEW ENGINE 
 app.set('view engine','ejs');
-app.set('views','./views');
+app.set('views',['./views','./views/layouts','./views/headers','./views/footers','./views/views']);
 
 // MANAGING STYLES AND SCRIPTS FROM VARIOUS VIEWS FOLLOWING LAYOUTS 
 app.set('layout extractStyles',true);
@@ -27,12 +27,13 @@ app.use(express.urlencoded());
 // CONNECTING TO THE DATABASE 
 const db = require('./config/mongoose');
 
+// Configuring Passport and Session Cookies
 const session = require('express-session');
 const passport = require('passport');
 const passportLocal = require('./config/passport-local-strategy');
 const MongoStore = require('connect-mongo');
 app.use(session({
-    name : 'Codeal',
+    name : 'SJF',
     secret : "aisikitaisi",
     saveUninitialized : false,
     resave:false,
@@ -41,7 +42,7 @@ app.use(session({
     },
     store : new MongoStore(
         {
-                mongoUrl : 'mongodb://127.0.0.1/codeal_development'
+                mongoUrl : 'mongodb://127.0.0.1/job_fair_db'
         },
         {
             mongooseConnection : db,
