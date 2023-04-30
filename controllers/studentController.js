@@ -30,7 +30,7 @@ module.exports.create = async function(req,res){
 }
 
 module.exports.createSession = function(req,res){
-    console.log(req.body)
+    // console.log(req.body)
     return res.redirect('/student');
 }
 

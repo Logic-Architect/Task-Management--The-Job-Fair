@@ -25,12 +25,11 @@ const companySchema = new mongoose.Schema({
         type :String,
         required : true
     },
-    phone :[
-        {
-            type : String,
-            required : true 
-        }
-    ],
+    phone :{
+        type : String,
+        required : true 
+    }
+    ,
     hiringFrom :{
         type : Date
     } ,
@@ -49,7 +48,11 @@ const companySchema = new mongoose.Schema({
         type : String,
         required : true
        }
-    ]
+    ],
+    type : {
+        type : String,
+        default : 'company'
+    }
 },{
     timestamps : true  
 })

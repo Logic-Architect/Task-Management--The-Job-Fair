@@ -4,7 +4,7 @@ const passport = require('passport')
 
 const studentController = require('../controllers/studentController');
 
-router.get('/',passport.checkAuthentication,studentController.home);
+router.get('/',passport.checkStudentAuthentication,studentController.home);
 router.post('/create',studentController.create);
 router.post('/create-session',passport.authenticate(
     'local',

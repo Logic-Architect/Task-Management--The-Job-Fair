@@ -2,7 +2,7 @@
 const mongoose = require('mongoose');
 
 // Connecting to the database 
-mongoose.connect('mongodb://127.0.0.1/todo_app_db');
+mongoose.connect('mongodb://127.0.0.1/job_fair_db');
 
 // Inherting the connection to check if it is successful 
 const db = mongoose.connection;

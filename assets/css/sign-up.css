@@ -21,3 +21,27 @@ select{
 #company{
   height: 65%;
 }
+.forBranch-options{
+  flex-basis: 75%;
+  display: flex;
+  flex-direction: column;
+}
+.branch{
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.branch input{
+  flex-basis: 10%;
+  width: 15px;
+  height: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.branch label{
+  flex-basis: 90%;
+  font-size: 1.3rem;
+
+}

@@ -33,7 +33,8 @@
             </div>
             <div class="text-input">
                 <label for="CPassword">Confirm Password</label>
-                <input type="password" name="confirm_password" placeholder="Confirm your password" required id="CPassword">
+                <input type="password" name="confirm_password" placeholder="Confirm your password" required
+                    id="CPassword">
             </div>
             <div class="submit">
                 <input type="submit" value="Sign In">
@@ -66,19 +67,20 @@
             </div>
             <div class="text-input">
                 <label for="hiringTo">Hiring Upto</label>
-                <input type="date" name="hiringUpto" placeholder="" required id="hiringTo" >
+                <input type="date" name="hiringUpto" placeholder="" required id="hiringTo">
             </div>
             <div class="text-input">
-                <label for="total-post">Total Vacancy</label>
-                <input type="number" name="vacancy" placeholder="Total Vacany" required id="phone">
+                <label for="vacancy">Total Vacancy</label>
+                <input type="number" name="totalVacancy" placeholder="Total Vacany" required id="vacancy">
             </div>
             <div class="text-input">
                 <label for="total-hired">Hired</label>
-                <input type="number" name="totalHired" title="You can fill it after the hiring starts" placeholder="Total Candidates Hired Uptil" required id="total-hired">
+                <input type="number" name="totalHired" title="You can fill it after the hiring starts"
+                    placeholder="Total Candidates Hired Uptil" required id="total-hired">
             </div>
             <div class="text-input">
-                <label for="total-hired">Category</label>
-                <select name="forBranch" id="forBranch" multiple="multiple" size="5" title="Hold Ctrl Key for multiple Selections">
+                <label for="">Category</label>
+                <!-- <select name="forBranch" id="forBranch" multiple="multiple" size="5" title="Hold Ctrl Key for multiple Selections">
                     <option value="CS">Computer Science</option>
                     <option value="IT">Information Technology</option>
                     <option value="MBA">MBA</option>
@@ -86,16 +88,48 @@
                     <option value="EN">Electronics Engineering</option>
                     <option value="CE">Civil Engineering</option>
                     <option value="ME">Mechanical Engineering</option>
-                </select>
+                </select> -->
+                <div class="forBranch-options">
+
+                    <div class="text-input branch">
+                        <input type="checkbox" name="forBranch" id="CS" value="CS">
+                    <label for="CS">Computer Science</label>
+                    </div>
+                   <div class="text-input branch">
+                    <input type="checkbox" name="forBranch" id="IS" value="IT">
+                    <label for="IT">Information Technology</label>
+                   </div>
+                    <div class="text-input branch">
+                        <input type="checkbox" name="forBranch" id="MBA" value="MBA">
+                    <label for="MBA">MBA</label>
+                    </div>
+                    <div class="text-input branch">
+                        <input type="checkbox" name="forBranch" id="EE" value="EE">
+                    <label for="EE">Electrical Engineering</label>
+                    </div>
+                   <div class="text-input branch">
+                    <input type="checkbox" name="forBranch" id="EN" value="EN">
+                    <label for="EN">Electronics Engineering</label>
+                   </div>
+                    <div class="text-input branch">
+                        <input type="checkbox" name="forBranch" id="CE" value="CE">
+                    <label for="CE">Civil Engineering</label>
+                    </div>
+                   <div class="branch text-input">
+                    <input type="checkbox" name="forBranch" id="ME" value="ME">
+                    <label for="ME">Mechanical Engineering</label>
+                   </div>
+                </div>
             </div>
-            
+
             <div class="text-input">
                 <label for="Password">Password</label>
                 <input type="password" name="password" placeholder="Enter your password" required id="Password">
             </div>
             <div class="text-input">
-                <label for="CPassword">Password</label>
-                <input type="password" name="confirm_password" placeholder="Confirm your password" required id="CPassword">
+                <label for="CPassword">Confirm Password</label>
+                <input type="password" name="confirm_password" placeholder="Confirm your password" required
+                    id="CPassword">
             </div>
             <div class="submit">
                 <input type="submit" value="Sign In">
