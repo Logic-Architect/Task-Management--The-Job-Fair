@@ -1,11 +1,17 @@
 const secureKeyMailer = require('../mailers/request-secure-key');
 const Author = require('../models/author');
 const crypto = require('crypto');
+const Company = require('../models/company');
 
-module.exports.home = function (req, res) {
+module.exports.home = async function (req, res) {
+
+    let company = await Company.find();
+    console.log('Company has',company)
+
     res.render('author', {
         title: 'Author',
-        layout: 'authorLayout'
+        layout: 'authorLayout',
+        company : company
     })
 }
 

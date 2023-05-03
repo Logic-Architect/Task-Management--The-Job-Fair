@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,12 +8,29 @@
     <title>
         <%= title%>
     </title>
+
+    <!-- JQUERY  -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"
+        integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <link rel="stylesheet" href="/css/author/authorLayout.css">
     <%- style%>
 </head>
+
 <body>
-    <%- include('_authorheader')%>
-    <%- body%>
-    <%- include('_authorfooter')%>
+    <div id="body-layout">
+        <div id="header-layout">
+            <%- include('_authorheader')%>
+        </div>
+        <div id="main-layout">
+            <%- body%>
+        </div>
+        <div id="footer-layout">
+            <%- include('_authorfooter')%>
+        </div>
+    </div>
     <%- script%>
 </body>
+
 </html>

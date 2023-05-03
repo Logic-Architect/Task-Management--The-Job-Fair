@@ -1,3 +1,8 @@
-h3{
-    color: red;
+.logo p a{
+    color: rgb(211, 37, 37);
+    font-size: 1.9rem;
+}
+.links div a{
+    color: rgb(228, 222, 222);
+    font-size: 1.2rem;
 }

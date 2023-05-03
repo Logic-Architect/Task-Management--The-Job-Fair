@@ -1,9 +1,20 @@
 <link rel="stylesheet" href="/css/author/_authorheader.css">
-<h3>
-    this is author header
-</h3>
-<a href="/author/sign-in">Sign In</a>
-<a href="/author/sign-out">Sign Out</a>
+<div class="logo">
+    <p>
+        <a href="/author">JOB FAIR</a>
+    </p>
+</div>
+<div class="links">
+    <%if(!locals.user){%>
+        <div id="sign-in">
+            <a href="/author/sign-in">Sign In</a>
+        </div>
+    <%}else{%>
+        <div id="sign-up">
+            <a href="/author/sign-out">Sign Out</a>
+        </div>
+    <%}%>
 
+</div>
 
 <script src="/js/author/_authorheader.js"></script>
