@@ -1,6 +1,9 @@
 const Company = require('../models/company');
 
 module.exports.home = function(req,res){
+    if(req.timedOut){
+        return res.redirect('/')
+    }
     return res.render('company',{
         layout : 'homeLayout',
         title : 'Company'

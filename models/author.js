@@ -17,6 +17,19 @@ const authorSchema = mongoose.Schema({
         type : String,
         required : true 
     },
+    phone : {
+        type :String,
+        required : true
+    },
+    secureKey : {
+        type :String,
+        required : true
+    },
+    verified : {
+        type : Boolean,
+        required : true,
+        default : false
+    },
     authorised:[
         {
             type : mongoose.Schema.Types.ObjectId,

@@ -1,0 +1,30 @@
+<div class="sign-up-modal">
+    <form action="/author/verify" method="POST">
+        <div class="email-sec">
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email">
+        </div>
+        <div class="username-sec">
+            <label for="username">Username</label>
+            <input type="text" name="username" id="username">
+        </div>
+        <div class="desig-sec">
+            <label for="designation">designation</label>
+            <input type="text" name="designation" id="designation">
+        </div>
+        <div class="phone">
+            <label for="phone">Contac No</label>
+            <input type="text" name="phone" id="phone">
+        </div>
+        <div>
+            <label for="password">Password</label>
+            <input type="password" name="password" id="password">
+        </div>
+        <div>
+            <label for="confirm_password">Confirm Password</label>
+            <input type="confirm_password" name="confirm_password" id="confirm_password">
+        </div>
+        <input type="submit" value="Request Security Key">
+    </form>
+    <a href="/author/secure-key">Already Have a Secure Key</a>
+</div>

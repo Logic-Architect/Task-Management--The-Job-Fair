@@ -9,7 +9,7 @@ app.use(expressLayouts);
 
 // CONFIGURING VIEW ENGINE 
 app.set('view engine','ejs');
-app.set('views',['./views','./views/layouts','./views/headers','./views/footers','./views/views']);
+app.set('views',['./views','./views/layouts','./views/headers','./views/footers','./views/views','./views/views/auth']);
 
 // MANAGING STYLES AND SCRIPTS FROM VARIOUS VIEWS FOLLOWING LAYOUTS 
 app.set('layout extractStyles',true);
