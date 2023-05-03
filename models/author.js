@@ -35,7 +35,11 @@ const authorSchema = mongoose.Schema({
             type : mongoose.Schema.Types.ObjectId,
             ref : 'Company'
         }
-    ]
+    ],
+    type :{
+        type : String,
+        default : 'author'
+    }
 },{
     timestamps : true 
 })

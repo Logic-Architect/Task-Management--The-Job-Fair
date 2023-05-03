@@ -61,6 +61,7 @@ module.exports.verify = async function (req, res) {
     return res.redirect('/author/secure-key')
 }
 
+// RENDER THE PAGE FOR ENTERING THE SECURITY KEY 
 module.exports.secureKey = function (req, res) {
     res.render('secure-key', {
         title: 'Security Key',
@@ -68,18 +69,36 @@ module.exports.secureKey = function (req, res) {
     })
 }
 
+// VERIFY THE SECURITY KEY AND UPDATE THE AUTHOR VERIFICATION STATUS 
 module.exports.verifySecureKey = async function (req, res) {
     console.log('secure key bu user', req.body);
 
     let userKey = await Author.findOne({ email: req.body.email });
-    console.log('Key shoukd be', userKey.secureKey)
+    console.log('Key shoukd be', userKey.secureKey);
     if (userKey.secureKey == req.body.key) {
         let updatedUser = await Author.findByIdAndUpdate(userKey._id, { verified: true })
-        console.log('Author verified', updatedUser.secureKey)
-        return res.redirect('/author/sign-in')
+        console.log('Author verified', updatedUser.secureKey);
+        return res.redirect('/author/sign-in');
     } else {
         // key dont match 
-        return res.redirect('back')
+        return res.redirect('back');
     }
 
+}
+
+
+// CREATE SIGN IN SESSION 
+module.exports.createSession = function(req,res){
+    return res.redirect('/author');
+}
+
+// LOG OUT AUTHOR 
+module.exports.signOut = function(req,res){
+    req.logout(err=>{
+        if(err){
+            console.log('Error in Loggin OUt User',err);
+            return res.redirect('back');
+        }
+        return res.redirect('/author/sign-in');
+    })
 }
