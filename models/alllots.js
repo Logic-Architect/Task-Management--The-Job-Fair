@@ -21,7 +21,8 @@ const allotmentSchema = mongoose.Schema({
     ],
     roomAlloted :{
         type : Boolean,
-        required: true,
+        
+        
         default : false
     },
     block:{

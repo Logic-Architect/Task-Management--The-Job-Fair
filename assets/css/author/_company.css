@@ -18,6 +18,7 @@
     align-content: space-around;
 }
 .name{
+    border: 0px;
 }
 .name span{
     font-size: 1.7rem;
@@ -91,7 +92,7 @@
     align-items: center;
     margin: 10px;
 }
-.verification-status div{
+.verification-pending{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -108,4 +109,48 @@
 }
 .verification-pending{
     background-image: linear-gradient(red, white ,red);
+}
+.verification-pending:hover{
+    cursor: pointer;
+}
+
+/* MOdal WIndows  */
+.Modal{
+    /* visibility: hidden; */
+    display: none;
+    border: 1px solid black;
+    position: fixed;
+    top: 20vh;
+    left: 30vw;
+    height: 440px;
+    width: 600px;
+    background-color: white;
+    color: black;
+    overflow: scroll;
+}
+.close{
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    border: 1px solid black;
+}
+.close:hover{
+    cursor: pointer;
+}
+.vHeading{
+    font-size: 1.4rem;
+}
+.verification-comp-info{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: space-around;
+    border: 1px solid black;
+    margin: 5px;
+}
+.verification-comp-info p{
+    text-align: center;
+}
+.room{
+    width: 55px;
 }

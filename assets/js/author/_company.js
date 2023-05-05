@@ -1,10 +1,11 @@
-// Verification of Hiring status
+// Verification  status
 changeVerificationText = (id)=>{
     $(`#${id}`).text('Verify Now');
     $(`#${id}`).on('mouseleave',()=>{
         $(`#${id}`).text('Verification Pending')
     })
 }
+
 
 // Color of hiring status 
 $(document).ready(()=>{
@@ -24,3 +25,29 @@ $(document).ready(()=>{
         'border-radius':'10px'
     })
 })
+
+openModal = (id)=>{
+    // $('#author-main').addClass('blur')
+    // $(`.verification-modal-${id}`).parent().addClass('blur')
+    $(`#verification-modal-${id}`).fadeIn();
+//     $(`.verification-modal-${id}`).on('blur',()=>{
+//         $(`.verification-modal-${id}`).addClass('show')
+//     })
+// }
+}
+closeModal = ()=>{
+    $('.Modal').fadeOut();
+}
+
+// Add Volunteer 
+let count = 1
+
+addVol=(a)=>{
+    count++
+    console.log(a);
+    $(`.${a}`)
+}
+
+removeVol=(a)=>{
+    console.log(a);
+}
