@@ -1,0 +1,111 @@
+.company-blog{
+    /* color: red; */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 195;
+    border: 2px solid white;
+    margin: 15px;
+    padding: 10px;
+    height: 50%;
+}
+/* Left Side Content  */
+.info{
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    align-content: space-around;
+}
+.name{
+}
+.name span{
+    font-size: 1.7rem;
+
+}
+.details{
+    padding: 30px;
+    font-size: 0.8rem;
+}
+/* Right Side COntent  */
+
+/* Container  */
+.status{
+    width: 35%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+/* Item1 Remove Button  */
+.remover{
+    align-self: self-end;
+}
+.remover button{
+    flex-basis: 10%;
+    margin: 5px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    background-color: rgb(214, 20, 20);
+    border-radius: 10px;
+    padding: 3px;
+    color: rgb(255, 255, 255);
+}
+.remover button:hover{
+    background-color: rgb(243, 236, 236);
+    color: red;
+}
+
+/* Item2 Hiring Status  */
+.hiring-status{
+    flex-basis:50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.status-line{
+    font-size: 1.5rem;
+}
+.date-of-hiring{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 39%;
+    text-align: center;
+}
+.date-of-hiring p{
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+/* Item 3 Vreification Status  */
+.verification-status{
+    flex-basis: 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+}
+.verification-status div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 70%;
+    height: 85%;
+    margin: 10px;
+    border: 1px solid green;
+}
+.verification-status a p{
+    font-size: 1.2rem;
+}
+.verification-done{
+    background-image: linear-gradient(green, white ,green);
+}
+.verification-pending{
+    background-image: linear-gradient(red, white ,red);
+}

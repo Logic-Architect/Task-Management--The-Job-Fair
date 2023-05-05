@@ -1,5 +1,34 @@
-<link rel="stylesheet" href="/css/author/author.css">
-<h1>
-    this is author page
-</h1>
+<link rel="stylesheet" type="text/css" href="/css/author/_company.css">
+<link rel="stylesheet" type="text/css" href="/css/author/author.css">
+
+<div class="author-navbar">
+    <ul class="horizontal-list">
+        <li>Menu1</li>
+        <li>menu2</li>
+        <li>menu3</li>
+    </ul>
+</div>
+<div id="author-main">
+    <div class="sidebar">
+   
+    </div>
+    <div id="company-window">
+        <div class="company-sort-navbar">
+            <ul class="horizontal-list" id="company-window-navbar">
+                <li>All</li>
+                <li>Verified</li>
+                <li>UnVerified</li>
+                <li>
+                    <input type="search" name="" id="search" placeholder="Search By Name">
+                </li>
+            </ul>
+        </div>
+        <div class="companys">
+            <%for(let comp of company){%>
+            <%- include('_company.ejs',{comp:comp}) -%>  
+            <%}%>
+    </div>
+        </div>
+</div>
 <script src="/js/author/author.js"></script>
+<script src="/js/author/_company.js"></script>

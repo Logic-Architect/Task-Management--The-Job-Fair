@@ -34,4 +34,6 @@ router.get('/secure-key',authorController.secureKey)
 
 router.post('/verify-secure-key',authorController.verifySecureKey);
 
+router.use('/author-action',passport.checkAuthorAuthentication,require('./author-action'))
+
 module.exports = router;
