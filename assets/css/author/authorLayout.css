@@ -58,7 +58,7 @@ input:-webkit-autofill:focus{
 #body-layout{
     display: flex;
     flex-direction: column;
-    /* align-items: center;
+    /* align-items: center; */
     width: 100vw;
     background-image: linear-gradient(to top right,rgb(211, 37, 37),white,rgb(211, 37, 37));
     background-repeat: no-repeat;
@@ -81,4 +81,4 @@ input:-webkit-autofill:focus{
 }
 .submit a:hover{
     transform: scale(1.9);
-} 
+}
