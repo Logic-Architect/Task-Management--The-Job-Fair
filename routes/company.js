@@ -15,7 +15,9 @@ router.post('/create-session',passport.authenticate(
     }
 ),companyController.createSession);
 
-router.get('/sign-out',companyController.signOut)
+router.get('/sign-out',companyController.signOut);
+
+router.get
 
 
 

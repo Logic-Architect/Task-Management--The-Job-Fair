@@ -16,7 +16,7 @@ app.set('layout extractStyles',true);
 app.set('layout extractScripts',true);
 
 // DISABLING GLOBAL LAYOUTS 
-app.set('view options', { layout: false });
+app.set('view options', { layout: true });
 
 // CONFIGURING PATH TO STATIC FILES 
 app.use(express.static('./assets'));

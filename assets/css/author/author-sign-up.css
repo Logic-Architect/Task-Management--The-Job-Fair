@@ -1,3 +1,9 @@
+.sign-in-center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 85vh;
+}
 .sign-up-modal{
     /* border: 2px solid grey; */
     width: 35%;

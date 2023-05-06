@@ -1,0 +1,164 @@
+
+<div class="company-blog">
+    <div class="info">
+        <div class="name">
+            <span>
+                <%= comp.cname%>
+            </span>
+        </div>
+        <div class="details">
+            <div class="email">
+                <i class="fa-solid fa-envelope"></i>
+                <span>
+                    <%= comp.email%>
+                </span>
+            </div>
+            <div class="phone">
+                <span>
+                    <i class="fa-solid fa-phone"></i>
+                    <%= comp.phone%>
+                </span>
+            </div>
+            <div class="address">
+                <address>
+                    <i class="fa-solid fa-location-dot"></i>
+                    <%= comp.address%>
+                </address>
+            </div>
+            <div class="volunteer">
+                <p>
+                    <i class="fa-solid fa-user-nurse"></i>
+                    Volunteer
+                </p>
+            </div>
+            <div class="roomalloted">
+                <p>
+                    <i class="fa-solid fa-people-roof"></i>
+                    Alloted Room :
+                </p>
+                <span>
+
+                </span>
+            </div>
+        </div>
+    </div>
+    <div class="status">
+        <div class="remover">
+            <button>
+                <a href="/author/author-action/remove-company/?id=<%= comp.id%>">Remove</a>
+            </button>
+        </div>
+        <div class="hiring-status"> 
+            <%{%>
+            <% let today = new Date();%>
+            <% let from = comp.hiringFrom%>
+            <% let to = comp.hiringUpto%>
+            <%if ((from<today)&&(today<to)){%>
+                
+                <p class="status-line green-white">
+                    Actively Hiring
+                </p>
+                <div class="date-of-hiring">
+                    <p>
+                        <span>
+                            From :
+                        </span>
+                        <span>
+                        <%= from.getDate()%>-<%=from.getMonth()%>-<%= from.getFullYear()%>
+                        </span>
+                    </p>
+                    <p>
+                        <span>
+                            To   :
+                        </span>
+                        <span>
+                        <%= to.getDate()%>-<%=to.getMonth()%>-<%= to.getFullYear()%>
+                        </span>
+                    </p>
+                </div>               
+            <%}else{%>
+                <%if(today<from){%>
+                    <p class="status-line yellow-white">
+                        Will Hire From
+                    </p>
+                    <div class="date-of-hiring">
+                        <span>
+                            <%= from.getDate()%>-<%=from.getMonth()%>-<%= from.getFullYear()%>
+                        </span>
+                    </div>
+                <%}else{%>
+                <p class="status-line red-white">
+                    Hiring Closed
+                </p>
+                <%}%>
+            <%}%>
+            <%}%>
+        </div>
+        <div class="verification-status">
+            <%if (comp.verified == true){%>
+                <p class="verification-done">
+                    Verified
+                </p>
+                <%}else{%>
+                   <div class="verification-pending">
+                    <!-- <a href="/author-action/verify"> -->
+                        <p id="<%= comp.id%>" onmouseover="changeVerificationText('<%=comp.id%>')"
+                           onclick="openModal('<%=comp.id%>')" >
+                        Verification Pending
+                        </p>
+
+
+                        <!-- Modal Window  -->
+                        <div class="Modal" id="verification-modal-<%=comp.id%>">
+
+                            <!-- Company DtaILS  -->
+                           <div class="verification-comp-info">
+                                <p class="vHeading"><%=comp.cname%></p>
+                                <p><%=comp.email%></p>
+                                <p onclick="closeModal()" class="close">X</p>
+                           </div>
+                           
+                           <!-- fROM  -->
+                           <div class="verification-form">
+                            <form action="/author/author-action/?id=<%=comp.id%>" method="post"></form>
+                                <div class="room-info">
+
+                                    <!-- Room ENtry  -->
+
+                                    <label for="">Room No</label>
+                                    <input type="text" name="block" class="block room" placeholder="Block">
+                                    <input type="text" name="floor" class="floor room" placeholder="Floor">
+                                    <input type="text" name="roomNo" class="roomNo room" placeholder="Room">
+                                </div>
+                                
+                                <!-- Volunteer Section -->
+                                
+                                <% { let count = 1%>
+                                <div class="volunteer<%=count%>">
+
+                                    <p>Volunteer 1</p>
+
+                                    <p onclick="removeVol('volunteer<%=count%>')">X</p>
+
+                                    <input type="text" name="volName" placeholder="Name">
+
+                                    <input type="text" name="volPhone" placeholder="Phone">
+
+                                    <input type="email" name="volEmail" placeholder="Email">
+
+                                    <p onclick="addVol('volunteer<%=count%>')">Add</p>
+                                </div>
+                                <%}%>
+                           </div>
+                          
+
+                        </div>
+
+
+
+                   <!-- </a> -->
+                   </div>
+                    <%}%>
+        </div>
+    </div>
+</div>

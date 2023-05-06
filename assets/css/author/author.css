@@ -1,4 +1,48 @@
-body{
-    margin: 0px;
-    color: violet;
+#author-main{
+    display: flex;
+    justify-content: space-between;
 }
+.author-navbar{
+    position: relative;
+    top: auto;
+}
+.sidebar{
+    margin: 15px;
+    border: 1px solid black;
+    width: 20%;
+}
+#company-window{
+    box-shadow: 0px 0px 3px 3px rgb(177, 44, 44);
+    width: 75%;
+    height: 80vh;
+    margin: 15px;
+    margin-right: 15px;
+    overflow: scroll;
+}
+.horizontal-list,.company-sort-navbar ul{
+    list-style: none;
+    padding: 0px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 15px;
+}
+.company-sort-navbar{
+    position: sticky;
+    /* top: 5px; */
+    /* background-color: black;
+    color: white; */
+    /* border: 1px solid black; */
+}
+.companys{
+    height: 85%;
+}
+input[type='search']{
+    border: 1px solid white;
+    padding: 3px;
+}
+div{
+    overflow: scroll;
+    overflow-wrap: break-word;
+}
+
