@@ -1,54 +1,80 @@
 <link rel="stylesheet" href="/css/home/_homeheader.css">
 
 <header class="home-header">
-        <div class="job-fair">
-            <a href="/">JOB FAIR</a>
-        </div>
-        <nav>
-            <ul class="nav-bar horizontal-list">
-                <li class="nav-link">
-                    <a href="/">Home</a>
-                </li>
-                <li class="nav-link">
-                    <a href="/student">Student</a>
-                </li>
-                <li class="nav-link">
-                    <a href="/company">Company</a>
-                </li>
-                <li class="nav-link">
-                    <a href="http://srimt.co.in/">About Us</a>
-                </li>
-            </ul>
-        </nav>
-        <div class="log-menu">
-            <%if (locals.user){%>
-                <%if(locals.user.type=='student'){%>
-                    <div class="log-in">
-                        <p>
-                            <a href="/student/sign-out">Sign Out</a>
-                        </p>
-                    </div>
-                    <%}else{%>
-                        <div class="log-in">
-                            <p>
-                                <a href="/company/sign-out">Sign Out</a>
-                            </p>
-                        </div>
-                        <%}%>
+    <div class="job-fair">
+        <i class="fa-sharp fa-regular fa-envelope"></i>
+        <a href="/">srgi666@gmail.com</a>
 
+    </div>
+    <nav>
+        <ul class="nav-bar horizontal-list">
+            <li class="nav-link">
+                <a href=""><i class="fa-brands fa-facebook"></i></a>
+            </li>
+            <li class="nav-link">
+                <a href=""><i class="fa-brands fa-square-instagram"></i></a>
+            </li>
+            <li class="nav-link">
+                <a href=""><i class="fa-brands fa-twitter"></i></a>
+            </li>
+            <li class="nav-link">
+                <a href=""><i class="fa-brands fa-linkedin-in"></i></a>
+            </li>
+        </ul>
+
+    </nav>
+    <div class="log-menu">
+        <%if (locals.user){%>
+            <%if(locals.user.type=='student'){%>
+                <div class="log-in">
+                    <p>
+                        <a href="/student/sign-out">Sign Out</a>
+                    </p>
+                </div>
                 <%}else{%>
                     <div class="log-in">
                         <p>
-                            <a href="/sign-in">Sign In</a>
-                        </p>
-                    </div>
-                    <div class="sign-up">
-                        <p>
-                            <a href="/sign-up">Sign Up</a>
+                            <a href="/company/sign-out">Sign Out</a>
                         </p>
                     </div>
                     <%}%>
-        </div>
-</header>
 
+                        <%}else{%>
+                            <div class="log-in">
+                                <p>
+                                    <a href="/sign-in">Sign In</a>
+                                </p>
+                            </div>
+                            <!-- <div class="sign-up">
+                                <p>
+                                    <a href="/sign-up">Sign Up</a>
+                                </p>
+                            </div> -->
+                            <%}%>
+
+    </div>
+</header>
+<div class="Handle-view-900px">
+<div class="Icon">
+    <img src="/images/homeheader/SRIMT Logo.jpg" alt="ICON">
+</div>
+<div>
+    <ul class="horizontal-list navigation-bar
+            ">
+        <li><a href="/">Home</a></li>
+        <li><a href="/student">Student</a></li>
+        <li><a href="/company">Company</a></li>
+        <li><a href="http://srimt.co.in/">About Us</a></li>
+    </ul>
+</div>
+</div>
+
+<div class="Responsive-view">
+    <div>
+        <img src="/images/homeheader/SRIMT Logo.jpg" alt="ICON">
+    </div>
+    <div>
+        <a><i class="fa-solid fa-list-ul fa-2xl"></i></a>
+    </div>
+</div>
 <script src="/js/home/_homeheader"></script>

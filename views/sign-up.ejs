@@ -1,42 +1,50 @@
 <link rel="stylesheet" href="/css/sign-in.css">
 <link rel="stylesheet" href="/css/sign-up.css">
-<div class="sign-in sign-up">
-    <h1>
+<div class="sign-up">
+    <h3 style="margin-top:0px">
         Sign Up
-    </h1>
-    <div class="type">
+    </h3>
+    <div class="option-of-login">
         <div id="stud">
-            <p>as Student</p>
+            <p>Student</p>
         </div>
         <div id="comp">
-            <p>as Company</p>
+            <p>Company</p>
         </div>
     </div>
 
     <div id="student">
         <form action="/student/create" method="POST">
-            <div class="text-input">
-                <label for="Email">Student Email</label>
-                <input type="email" name="email" placeholder="Enter your email" required id="Email">
+            <div class="row">
+                <div class="text-input">
+                    <label for="Email">Student Email</label>
+                    <input type="email" name="email" placeholder="Enter your email" required id="Email">
+                </div>
+                <div class="text-input">
+                    <label for="username">Username</label>
+                    <input type="text" name="name" placeholder="Enter your Username" required id="username">
+                </div>
             </div>
-            <div class="text-input">
-                <label for="username">Username</label>
-                <input type="text" name="name" placeholder="Enter your Username" required id="username">
+            <div class="row">
+                <div class="text-input">
+                    <label for="College">College</label>
+                    <input type="text" name="college" placeholder="Enter your College Name" required id="College">
+                </div>
+                <div class="text-input">
+                    <label for="Password">Password</label>
+                    <input type="password" name="password" placeholder="Enter your password" required id="Password">
+                </div>
             </div>
-            <div class="text-input">
-                <label for="College">College</label>
-                <input type="text" name="college" placeholder="Enter your College Name" required id="College">
+            <div class="row">
+                <div class="text-input">
+                    <label for="CPassword">Confirm Password</label>
+                    <input type="password" name="confirm_password" placeholder="Confirm your password" required
+                        id="CPassword">
+                </div>
+                <div></div>
             </div>
-            <div class="text-input">
-                <label for="Password">Password</label>
-                <input type="password" name="password" placeholder="Enter your password" required id="Password">
-            </div>
-            <div class="text-input">
-                <label for="CPassword">Confirm Password</label>
-                <input type="password" name="confirm_password" placeholder="Confirm your password" required
-                    id="CPassword">
-            </div>
-            <div class="submit">
+
+            <div class="submit" id="sign-up-button">
                 <input type="submit" value="Sign In">
             </div>
         </form>
@@ -44,43 +52,55 @@
 
     <div id="company">
         <form action="/company/create" method="POST">
-            <div class="text-input">
-                <label for="Email">Company Email</label>
-                <input type="email" name="email" placeholder="Enter your email" required id="Email">
+            <div class="row">
+                <div class="text-input">
+                    <label for="Email">Company Email</label>
+                    <input type="email" name="email" placeholder="Enter your email" required id="Email">
+                </div>
+                <div class="text-input">
+                    <label for="username">Company Name</label>
+                    <input type="text" name="cname" placeholder="Name Of The Company" required id="username">
+                </div>
             </div>
-            <div class="text-input">
-                <label for="username">Company Name</label>
-                <input type="text" name="cname" placeholder="Name Of The Company" required id="username">
+
+            <div class="row"><input type="hidden" name="verified" value="false">
+                <div class="text-input">
+                    <label for="address">Address</label>
+                    <input type="text" name="address" placeholder="Location of the Comapny" required id="address">
+                </div>
+                <div class="text-input">
+                    <label for="phone">Contact</label>
+                    <input type="text" name="phone" placeholder="Contact No" required id="phone">
+                </div>
             </div>
-            <input type="hidden" name="verified" value="false">
-            <div class="text-input">
-                <label for="address">Address</label>
-                <input type="text" name="address" placeholder="Location of the Comapny" required id="address">
+
+            <div class="row">
+                <div class="text-input">
+                    <label for="hiringFrom">Hiring From</label>
+                    <input type="date" name="hiringFrom" placeholder="" required id="hiringFrom">
+                </div>
+                <div class="text-input">
+                    <label for="hiringTo">Hiring Upto</label>
+                    <input type="date" name="hiringUpto" placeholder="" required id="hiringTo">
+                </div>
             </div>
-            <div class="text-input">
-                <label for="phone">Contact</label>
-                <input type="text" name="phone" placeholder="Contact No" required id="phone">
+
+            <div class="row">
+                <div class="text-input">
+                    <label for="vacancy">Total Vacancy</label>
+                    <input type="number" name="totalVacancy" placeholder="Total Vacany" required id="vacancy">
+                </div>
+                <div class="text-input">
+                    <label for="total-hired">Hired</label>
+                    <input type="number" name="totalHired" title="You can fill it after the hiring starts"
+                        placeholder="Total Candidates Hired Uptil" required id="total-hired">
+                </div>
             </div>
-            <div class="text-input">
-                <label for="hiringFrom">Hiring From</label>
-                <input type="date" name="hiringFrom" placeholder="" required id="hiringFrom">
-            </div>
-            <div class="text-input">
-                <label for="hiringTo">Hiring Upto</label>
-                <input type="date" name="hiringUpto" placeholder="" required id="hiringTo">
-            </div>
-            <div class="text-input">
-                <label for="vacancy">Total Vacancy</label>
-                <input type="number" name="totalVacancy" placeholder="Total Vacany" required id="vacancy">
-            </div>
-            <div class="text-input">
-                <label for="total-hired">Hired</label>
-                <input type="number" name="totalHired" title="You can fill it after the hiring starts"
-                    placeholder="Total Candidates Hired Uptil" required id="total-hired">
-            </div>
-            <div class="text-input">
-                <label for="">Category</label>
-                <!-- <select name="forBranch" id="forBranch" multiple="multiple" size="5" title="Hold Ctrl Key for multiple Selections">
+
+            <div class="row">
+                <div class="text-input" id="checkbox">
+                    <label for="" style="font-size: 2rem;">Category</label>
+                    <!-- <select name="forBranch" id="forBranch" multiple="multiple" size="5" title="Hold Ctrl Key for multiple Selections">
                     <option value="CS">Computer Science</option>
                     <option value="IT">Information Technology</option>
                     <option value="MBA">MBA</option>
@@ -89,49 +109,53 @@
                     <option value="CE">Civil Engineering</option>
                     <option value="ME">Mechanical Engineering</option>
                 </select> -->
-                <div class="forBranch-options">
+                    <div class="forBranch-options">
 
-                    <div class="text-input branch">
-                        <input type="checkbox" name="forBranch" id="CS" value="CS">
-                    <label for="CS">Computer Science</label>
+                        <div class="text-input branch">
+                            <input type="checkbox" name="forBranch" id="CS" value="CS">
+                            <label for="CS">Computer Science</label>
+                        </div>
+                        <div class="text-input branch">
+                            <input type="checkbox" name="forBranch" id="IS" value="IT">
+                            <label for="IT">Information Technology</label>
+                        </div>
+                        <div class="text-input branch">
+                            <input type="checkbox" name="forBranch" id="MBA" value="MBA">
+                            <label for="MBA">MBA</label>
+                        </div>
+                        <div class="text-input branch">
+                            <input type="checkbox" name="forBranch" id="EE" value="EE">
+                            <label for="EE">Electrical Engineering</label>
+                        </div>
+                        <div class="text-input branch">
+                            <input type="checkbox" name="forBranch" id="EN" value="EN">
+                            <label for="EN">Electronics Engineering</label>
+                        </div>
+                        <div class="text-input branch">
+                            <input type="checkbox" name="forBranch" id="CE" value="CE">
+                            <label for="CE">Civil Engineering</label>
+                        </div>
+                        <div class="branch text-input">
+                            <input type="checkbox" name="forBranch" id="ME" value="ME">
+                            <label for="ME">Mechanical Engineering</label>
+                        </div>
                     </div>
-                   <div class="text-input branch">
-                    <input type="checkbox" name="forBranch" id="IS" value="IT">
-                    <label for="IT">Information Technology</label>
-                   </div>
-                    <div class="text-input branch">
-                        <input type="checkbox" name="forBranch" id="MBA" value="MBA">
-                    <label for="MBA">MBA</label>
-                    </div>
-                    <div class="text-input branch">
-                        <input type="checkbox" name="forBranch" id="EE" value="EE">
-                    <label for="EE">Electrical Engineering</label>
-                    </div>
-                   <div class="text-input branch">
-                    <input type="checkbox" name="forBranch" id="EN" value="EN">
-                    <label for="EN">Electronics Engineering</label>
-                   </div>
-                    <div class="text-input branch">
-                        <input type="checkbox" name="forBranch" id="CE" value="CE">
-                    <label for="CE">Civil Engineering</label>
-                    </div>
-                   <div class="branch text-input">
-                    <input type="checkbox" name="forBranch" id="ME" value="ME">
-                    <label for="ME">Mechanical Engineering</label>
-                   </div>
                 </div>
             </div>
 
-            <div class="text-input">
-                <label for="Password">Password</label>
-                <input type="password" name="password" placeholder="Enter your password" required id="Password">
+            <div class="row">
+                <div class="text-input">
+                    <label for="Password">Password</label>
+                    <input type="password" name="password" placeholder="Enter your password" required id="Password">
+                </div>
+                <div class="text-input">
+                    <label for="CPassword">Confirm Password</label>
+                    <input type="password" name="confirm_password" placeholder="Confirm your password" required
+                        id="CPassword">
+                </div>
             </div>
-            <div class="text-input">
-                <label for="CPassword">Confirm Password</label>
-                <input type="password" name="confirm_password" placeholder="Confirm your password" required
-                    id="CPassword">
-            </div>
-            <div class="submit">
+
+            <div class="submit" id="sign-up-button">
                 <input type="submit" value="Sign In">
             </div>
         </form>

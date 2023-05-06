@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,14 +9,21 @@
         <%= title%>
     </title>
     <!-- Adding jQuery  -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js" integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"
+        integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
 
     <!-- My Stylesheets -->
     <link rel="stylesheet" type="text/css" href="/css/home/homeLayout.css">
     <%- style%>
+    <!-- Add fontawesome Link -->
+    <script src="https://kit.fontawesome.com/e784f7575e.js" crossorigin="anonymous"></script>
+
 </head>
+
 <body>
-    <div class="header">
+    <div class="header sticky">
         <%- include('_homeheader')%>
     </div>
     <div class="body">
@@ -25,6 +33,6 @@
         <%- include('_homefooter')%>
     </div>
     <%- script%>
-    <script scr="/js/home/homeLayout"></script>
+        <script scr="/js/home/homeLayout"></script>
 </body>
 </html>

@@ -1,24 +1,70 @@
 #student{
-    display: none;
-    width: 50%;
     margin: auto;
 }
 
 #company{
     display : none;
-    width: 50%;
     margin: auto;
 }
 
-.sign-in{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    font-size: 2rem;
-    height: 90vh;
+/* Style the inner div elements */
+/* Style the welcome block */
+
+.welc-div{
+    width: 40%;
+    height: 100%;
+    border-right: 1px solid white;
+}
+#underline{
+    border-bottom: 10px solid white;
+    width: 14vh;
+    height: 3px;
+    margin-top: 3vh;
+    margin-bottom: 3vh;
+    margin-left: 7vw;
+}
+.welc-info{
+    font-size:1rem;
+    text-emphasis: center;
+    padding:5px;
 }
 
+/* Style the sigin part */
+
+.sign-in-div{
+    padding:4px;
+    width: 100%;
+    height: 99%;
+}
+.option-of-login{
+    display: flex;
+    flex-direction: row;
+    background-color: rgba(9, 0, 40, 0.4);
+}
+.option-of-login div{
+    width: 50%;
+}
+
+#default-form{
+    height: 64%;
+    margin-top: 4vh;
+}
+#stud {
+    animation: 500ms;
+    border-right: 1px solid white;
+}
+
+#stud:hover {
+    color: grey;
+}
+
+#comp {
+    animation: 500ms;
+}
+
+#comp:hover {
+    color: grey;
+}
 .type{
     display: flex;
     justify-content: space-between;
@@ -29,23 +75,8 @@
     padding: 5px;
 }
 
-#stud{
-    animation: 500ms;
-}
-#stud:hover{
-    background-color: rgb(232, 238, 238);
-    color: grey;
-    border-radius: 10px;
-}
+/* Form Style */
 
-#comp{
-    animation: 500ms;
-}
-#comp:hover{
-    background-color: rgb(232, 238, 238);
-    color: grey;
-    border-radius: 10px;
-}
 form{
     width: 100%;
     display: flex;
@@ -53,39 +84,53 @@ form{
 }
 form div{
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    flex-direction: column;
+}
+label{
+    font-weight: lighter;
+    text-align: left;
+    margin-bottom: 3vh;
 }
 .text-input{
     margin: 12px;
 }
-.text-input input{
-    height : 2rem;
-    width: 60%;
-    border: none;
-    font-size: 1.2rem;
-    font-weight: 200;
-    font-style: italic;
-    background: none;
-    color: white;
-    outline: none;
-}
-.text-input input:focus{
-    outline: none;
-}
 .submit{
-    align-self: flex-end;
-  
-} 
-input[type='submit']{
-    font-size: 1.3rem;
-    border-radius: 4px;
-    border: none;
-    margin: 5px;
-    height: 2rem;
-    width: 5rem;
+    width: 98px;
+    height: 54px;
+    background-color: #042554;
+    margin-left:23vw;
 }
-input[type='submit']:hover{
-    font-size: 1.4rem;
-    box-shadow: 0px 0px 5px 5px grey;
+input[type="submit"]{
+    align-items: center;
+    font-size: 1.5rem;
+    height: 8vh;
+    
+}
+input{
+    background: none!important;
+    border: none;
+    height: 4vh;
+    color: white;
+    font-size: 1rem;
+}
+/* Create new Account */
+#sign-up-create{
+    padding-top:3vh;
+    font-size: 1rem;
+}
+#sign-up-create a{
+    text-decoration: none;
+    color: red;
+}
+/* Responsiveness */
+@media only screen and (max-width: 786px) {
+    .welc-div{
+        display:none;
+    }
+    .sign-in-div{
+        width: 100%;
+    }
+    .submit{
+        margin-left: 28vw;
+    }
 }

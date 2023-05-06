@@ -1,47 +1,65 @@
-.sign-up{
-    overflow :scroll;
+.sign-up {
+  overflow: hidden;
+  height: 80vh;
+  width: 100%;
+}
+
+.sign-up {
+  overflow: scroll;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.row div {
+  width: 50%;
+}
+
+#sign-up-button {
+  margin-left: 35vw;
 }
 
 /* Hide scrollbar for Chrome, Safari and Opera */
 .sign-up::-webkit-scrollbar {
-    display: none;
-  }
-  
-  /* Hide scrollbar for IE, Edge and Firefox */
-  .sign-up {
-    -ms-overflow-style: none;  /* IE and Edge */
-    scrollbar-width: none;  /* Firefox */
-  }
+  display: none;
+}
 
-select{
+/* Hide scrollbar for IE, Edge and Firefox */
+.sign-up {
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox  */
+}
+
+select {
   width: 60%;
   font-size: 1.1rem;
-} 
+}
 
-#company{
+#company {
   height: 65%;
 }
-.forBranch-options{
-  flex-basis: 75%;
-  display: flex;
-  flex-direction: column;
+#checkbox{
+  width: 100%;
+}
+#checkbox label{
+  font-size: 1rem;
+  margin: 0px;
+}
+.forBranch-options {
+  width: max-content;
 }
 .branch{
   width: 90%;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  flex-direction: row;
 }
-.branch input{
-  flex-basis: 10%;
-  width: 15px;
-  height: 15px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.branch label{
-  flex-basis: 90%;
-  font-size: 1.3rem;
-
+@media only screen and (max-width: 600px) {
+  .row{
+    flex-direction: column;
+  }
 }
