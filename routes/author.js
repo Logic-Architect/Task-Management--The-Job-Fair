@@ -14,7 +14,7 @@ router.get('/sign-in',authorController.signIn);
 router.get('/create-session',passport.authenticate(
     'local',
     {
-        failureRedirect : '/sign-in',
+        failureRedirect : '/author/sign-in',
     }
 ),authorController.createSession)
 

@@ -1,0 +1,55 @@
+
+/* Stle the whole body */
+
+.sign-in {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    font-family: sans-serif;
+}
+
+/* Set the background */
+
+.bg-image {
+
+    /* The image used */
+    /* background-image: url("/images/sign in/bg-image.jpg"); */
+    /* background-color: white; */
+    background-image: linear-gradient(120deg,blue,white,blue);
+    /* background-image: radial-gradient(rgb(76, 76, 229),white,#0c6bf1); */
+
+    /* Add the blur effect */
+    -webkit-filter: blur(6px);
+
+    /* Full height */
+    width: 98.8vw;
+    height: 97.8vh;
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* Position bg-text in the middle of the page */
+
+.bg-text {
+    background-color: rgba(0, 0, 0, 0.4);
+    /*Black w/opacity/see-through */
+    color: white;
+    font-weight: bold;
+    border: 3px solid #f1f1f1;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    height: 80vh;
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
