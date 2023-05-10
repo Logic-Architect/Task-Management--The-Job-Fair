@@ -36,4 +36,7 @@ router.post('/verify-secure-key',authorController.verifySecureKey);
 
 router.use('/author-action',passport.checkAuthorAuthentication,require('./author-action'))
 
+// authors xhr requests
+router.use('/xhr',passport.checkAuthorAuthentication,require('./xhr'))
+
 module.exports = router;

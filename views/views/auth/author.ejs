@@ -5,12 +5,12 @@
     <ul class="horizontal-list">
         <li>Menu1</li>
         <li>menu2</li>
-        <li>menu3</li>
+        <li><a href="/author/author-action/room-info">Room Info</a></li>
     </ul>
 </div>
-<div id="author-main" >
+<div id="author-main">
     <div class="sidebar">
-   
+
     </div>
     <div id="company-window">
         <div class="company-sort-navbar">
@@ -25,10 +25,10 @@
         </div>
         <div class="companys">
             <%for(let comp of company){%>
-            <%- include('_company.ejs',{comp:comp}) -%>  
-            <%}%>
-    </div>
+                <%- include('_company.ejs',{ comp:comp }) -%>
+                    <%}%>
         </div>
+    </div>
 </div>
 
 <script src="/js/author/author.js"></script>

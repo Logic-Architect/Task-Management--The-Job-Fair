@@ -12,7 +12,7 @@ module.exports.home = function(req,res){
 
 // SIGN UP THE COMPANY 
 module.exports.create =async function(req,res){
-    console.log(req.body)
+    // console.log(req.body)
 
     if((req.body.password == req.body.confirm_password) && (req.body.verified == 'false') ){
 

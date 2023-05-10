@@ -31,16 +31,17 @@ cursor: horizontal-text;
 input[type='submit']{
     border: none;
     opacity: 0.8;
-    border-radius: 20px;
-    background-color: rgb(240, 197, 197);
+    border-radius: 2px;
+    background-color: rgb(52, 77, 238);
+    color: white;
     font-size: 1.3rem;
     padding: 10px;
     margin-top: 20px;
     cursor: pointer;
-    transition-duration: 600ms;
+    transition-duration: 200ms;
 }
 input[type='submit']:hover{
-    box-shadow: 0px 0px 5px 5px white;
+    box-shadow: 0px 0px 2px 1px rgb(26, 13, 202);
     transform: scale(1.05);
 }
 label{
@@ -53,14 +54,15 @@ input:-webkit-autofill:focus{
     -webkit-text-fill-color: rgb(131, 29, 29);
     font-size : 0.9rem;
     background: none;
-    width: initial;
+    width: inherit;
 }
 #body-layout{
     display: flex;
     flex-direction: column;
     /* align-items: center; */
     width: 100vw;
-    background-image: linear-gradient(to top right,rgb(211, 37, 37),white,rgb(211, 37, 37));
+    /* background-image: linear-gradient(to top right,rgb(211, 37, 37),white,rgb(211, 37, 37)); */
+    /* background-color: rgb(240, 214, 185); */
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -72,6 +74,7 @@ input:-webkit-autofill:focus{
     font-size: 1.3rem;
     color: white;
     padding: 15px;
+    background-color: rgb(40, 40, 190);
 }
 #main-layout{
     height: 90vh;
