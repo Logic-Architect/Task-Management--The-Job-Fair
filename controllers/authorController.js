@@ -87,7 +87,7 @@ module.exports.home = async function (req, res) {
 module.exports.signIn = function (req, res) {
     res.render('author-sign-in', {
         title: 'Sign In',
-        layout: 'authorLayout'
+        layout: 'author-blank'
     })
 }
 

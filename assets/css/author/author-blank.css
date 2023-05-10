@@ -1,0 +1,53 @@
+.bg-image {
+
+    /* background-image: url("/images/sign in/bg-image.jpg"); */
+    /* background-image: linear-gradient(120deg,blue,white,blue); */
+    background-image: radial-gradient(rgb(76, 76, 229),white,rgb(15, 3, 109));
+
+    -webkit-filter: blur(6px);
+
+    width: 98.8vw;
+    height: 97.8vh;
+
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.sign-in-center{
+
+    background-color: rgba(0, 0, 0, 0.4);
+    /*Black w/opacity/see-through */
+    color: white;
+    font-weight: bold;
+    border: 3px solid #f1f1f1;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    height: 80vh;
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    /* display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+
+    width: 80%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.4);
+    color: white;
+    font-weight: bold;
+    border: 3px solid #f1f1f1; */
+    /* width: 80%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); */
+}
