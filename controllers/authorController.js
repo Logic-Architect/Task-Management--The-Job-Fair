@@ -37,7 +37,7 @@ module.exports.verify = async function (req, res) {
 
     let key = crypto.randomBytes(20).toString('hex');
 
-    // secureKeyMailer.signUpCode(req.body,key);
+    secureKeyMailer.signUpCode(req.body,key);
 
     // Create the Author in the database 
     if (req.body.password == req.body.confirm_password) {
