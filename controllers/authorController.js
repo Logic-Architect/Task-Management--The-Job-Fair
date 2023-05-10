@@ -2,16 +2,84 @@ const secureKeyMailer = require('../mailers/request-secure-key');
 const Author = require('../models/author');
 const crypto = require('crypto');
 const Company = require('../models/company');
+const RoomInfo = require('../models/rooms');
+const Allotment = require('../models/alllots');
 
 module.exports.home = async function (req, res) {
 
-    let company = await Company.find();
-    console.log('Company has',company)
+    // Once Run for making the CollegeRooms Database 
+    
+//     const blockMapper = {
+//         0: 'A',
+//         1: 'B',
+//         2: 'C',
+//         3: 'D',
+//         4: 'E'
+//     }
+//     const floors = ['0', '1', '2', '3'];
+//     const roomNo = ['01', '02', '03', '04', '05', '06'];
 
+//   for(let i in blockMapper){
+//     for(let j of floors){
+//         for(let k of roomNo){
+//             console.log(blockMapper[i],j,k)
+//             await RoomInfo.create({
+//                 block : blockMapper[i],
+//                 floor : j,
+//                 roomNo : k,
+//                 status : false
+//             })
+//         }
+//     }
+//   }
+
+
+    // await CollegeRooms.create({
+    //     collegeName: '486'
+    // })
+
+    // CollegeRooms.findOne({collegeName :'486'})
+    //     .then(college => {
+    //         for (i = 0; i < Object.keys(blockMapper).length; i++) {
+    //             let block = {
+    //                 blockName: blockMapper[i],
+    //                 floor: []
+    //             }
+    //             college.block.push(block);
+    //             // college.save();
+    //             for (j = 0; j < floors.length; j++) {
+    //                 let floor = {
+    //                     floorName: floors[j],
+    //                     room: []
+    //                 }
+    //                 college.block[i].floor.push(floor);
+    //                 // college.save();
+    //                 for (k = 0; k < roomNo.length; k++) {
+    //                     let room = {
+    //                         roomNo: roomNo[k],
+    //                         // status : false
+    //                     }
+    //                     college.block[i].floor[j].room.push(room);
+    //                 }
+    //             }
+    //         }
+    //         college.save()
+    //     })
+
+
+    let company = await Company.find();
+    // console.log('Company has',company)
+    // let allots = await Allotment.findOne({cid : company._id})
     res.render('author', {
         title: 'Author',
         layout: 'authorLayout',
-        company : company
+        company: company,
+        // volunteers : allots.volunteers,
+        // room : {
+        //     block : allots.block,
+        //     floor : allots.floor,
+        //     room : allots.roomNo
+        // }
     })
 }
 
@@ -33,7 +101,7 @@ module.exports.signUp = function (req, res) {
 
 // Send Security Key for new author to root author and register author
 module.exports.verify = async function (req, res) {
-    console.log('Verify User', req.body)
+    // console.log('Verify User', req.body)
 
     let key = crypto.randomBytes(20).toString('hex');
 
@@ -94,15 +162,15 @@ module.exports.verifySecureKey = async function (req, res) {
 
 
 // CREATE SIGN IN SESSION 
-module.exports.createSession = function(req,res){
+module.exports.createSession = function (req, res) {
     return res.redirect('/author');
 }
 
 // LOG OUT AUTHOR 
-module.exports.signOut = function(req,res){
-    req.logout(err=>{
-        if(err){
-            console.log('Error in Loggin OUt User',err);
+module.exports.signOut = function (req, res) {
+    req.logout(err => {
+        if (err) {
+            console.log('Error in Loggin OUt User', err);
             return res.redirect('back');
         }
         return res.redirect('/author/sign-in');

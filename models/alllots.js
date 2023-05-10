@@ -4,25 +4,24 @@ const allotmentSchema = mongoose.Schema({
     cid :{
         type : mongoose.Schema.Types.ObjectId,
         ref :'Company',
-        required : true 
+        required : true,
+        unique : true
     },
-    volEmail :{
-        type: String,
-    },
-    volName : [
-        {
-            type:String,
+   volunteers : [
+    {
+        name : {
+            type : String,
+        },
+        email : {
+            type :String
+        },
+        phone :{
+            type :String
         }
-    ],
-    volPhone:[
-        {
-            type :String,
-        }
-    ],
+    }
+   ],
     roomAlloted :{
-        type : Boolean,
-        
-        
+        type : Boolean, 
         default : false
     },
     block:{

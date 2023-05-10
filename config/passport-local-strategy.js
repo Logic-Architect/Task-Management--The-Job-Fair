@@ -99,7 +99,7 @@ passport.deserializeUser(async function (obj, done) {
 })
 
 passport.checkStudentAuthentication = function (req, res, next) {
-    console.log(req.user)
+    // console.log(req.user)
     if (req.isAuthenticated()) {
         if (req.user.type == 'student') {
             return next();
@@ -112,7 +112,7 @@ passport.checkStudentAuthentication = function (req, res, next) {
 
 }
 passport.checkCompanyAuthentication = function (req, res, next) {
-    console.log(req.user)
+    // console.log(req.user)
     if (req.isAuthenticated()) {
         if (req.user.type == 'company') {
             return next();
@@ -124,7 +124,7 @@ passport.checkCompanyAuthentication = function (req, res, next) {
     }
 }
 passport.checkAuthorAuthentication = function(req,res,next){
-    console.log(req.user);
+    // console.log(req.user);
     if(req.isAuthenticated()){
         if(req.user.type == 'author'){
             return next()

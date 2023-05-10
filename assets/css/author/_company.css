@@ -9,6 +9,7 @@
     margin: 15px;
     padding: 10px;
     height: 50%;
+    border-bottom: 1px solid blue;
 }
 /* Left Side Content  */
 .info{
@@ -92,6 +93,15 @@
     align-items: center;
     margin: 10px;
 }
+.verification-done{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 70%;
+    height: 85%;
+    margin: 10px;
+    border: 1px solid green;
+}
 .verification-pending{
     display: flex;
     justify-content: center;
@@ -115,6 +125,18 @@
 }
 
 /* MOdal WIndows  */
+
+.modal-background-handler{
+    display: none;
+    height: 100vh;
+    width: 100vw;
+    opacity: 0.5;
+    background-color: rgb(102, 146, 241);
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+
 .Modal{
     /* visibility: hidden; */
     display: none;
@@ -122,11 +144,13 @@
     position: fixed;
     top: 20vh;
     left: 30vw;
-    height: 440px;
-    width: 600px;
+    height: 390px;
+    width: 550px;
     background-color: white;
     color: black;
     overflow: scroll;
+    /* position:relative; */
+    z-index: 2;
 }
 .close{
     position: absolute;
@@ -151,6 +175,68 @@
 .verification-comp-info p{
     text-align: center;
 }
+
+/* form styling  */
+.verification-form{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 90%;
+    align-items: center;
+
+}
+
+.room-info{
+    margin: 10px 3px;
+    border: 1px solid black;
+
+}
 .room{
     width: 55px;
+    margin: 2px 6px;
+}
+.room:-webkit-autofill,
+.room:-webkit-autofill:hover, 
+.room:-webkit-autofill:focus{
+    border: none;
+    -webkit-text-fill-color: rgb(131, 29, 29);
+    font-size : 0.9rem;
+    background: none;
+    width: 55px;
+}
+
+.modal-volunteer{
+    border: 1px solid black;
+    overflow: scroll;
+    height: 40%;
+}
+.per-vol:nth-child(2n){
+    background-color: rgb(170, 170, 233);
+    /* color: white; */
+}
+.modal-vol-nav{
+    display: flex;
+    justify-content: space-between;
+    padding: 2px 5px;
+    align-items: center;
+}
+.per-vol{
+    border: 1px solid black;
+    margin: 8px 0px;
+    width: 95%;
+}
+.vol-input:-webkit-autofill,
+.vol-input:-webkit-autofill:hover, 
+.vol-input:-webkit-autofill:focus{
+    border: none;
+    -webkit-text-fill-color: rgb(131, 29, 29);
+    font-size : 0.9rem;
+    background: none;
+    width: 95%;
+}
+.add-vol-button{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 2px 15px;
 }

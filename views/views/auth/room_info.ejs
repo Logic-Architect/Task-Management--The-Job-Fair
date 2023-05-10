@@ -1,0 +1,71 @@
+<link rel="stylesheet" href="/css/author/room.css">
+<%let blocks = [...new Set(room.map(e => e.block))]%>
+<%let floors = [...new Set(room.map(e => e.floor))]%>
+<%let rooms = [...new Set(room.map(e => e.roomNo))]%>
+<div class="room-page">
+    <nav class="room-nav">
+        <ul>
+            <li>Menu1</li>
+            <li>Menu2</li>
+            <li>Menu3</li>
+        </ul>
+    </nav>
+    <div class="room-display-window">
+        <% for (let block of blocks){%>
+
+            <div class="panel">
+                <div class="section1">
+                    <div class="sub-section1">
+                        <%= block%>
+                    </div>
+                    <div class="sub-section2">
+                        <div class="room-heading">
+                            <p>
+                                Rooms
+                            </p>
+                        </div>
+                        <div class="room-nos">
+                            <% for (let room of rooms){%>
+                                <div class="r">
+                                    <%=room%>
+                                </div>
+                                <%}%>
+                        </div>
+                    </div>
+                </div>
+               <div class="section2">
+                <div class="sub-section1">
+                    <div class="floor-heading">
+                        <p>
+                            Floors
+                        </p>
+                    </div>
+                    <div class="floor-nos">
+                        <% for (let floor of floors){%>
+                            <div class="r">
+                                <%=floor%>
+                            </div>
+                            <%}%>
+                    </div>
+                </div>
+                <div class="sub-section2">
+                    <div class="grid-area">
+                        <%for(let floor of floors){%>
+                           <div class="grid-row">
+                            <%for(let room of rooms){%>
+                                <div class="grid-cell">
+                                    <%=floor%><%= room%>
+                                </div>
+                            <%}%>
+                           </div>
+                            <%}%>
+                    </div>
+                </div>
+               </div>
+                <%}%>
+
+            </div>
+    </div>
+</div>
+
+<script src="/js/author/room,js"></script>
