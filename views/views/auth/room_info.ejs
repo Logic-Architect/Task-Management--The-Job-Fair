@@ -1,7 +1,7 @@
 <link rel="stylesheet" href="/css/author/room.css">
-<%let blocks = [...new Set(room.map(e => e.block))]%>
-<%let floors = [...new Set(room.map(e => e.floor))]%>
-<%let rooms = [...new Set(room.map(e => e.roomNo))]%>
+<%let blocks = [...new Set(Room.map(e => e.block))]%>
+<%let floors = [...new Set(Room.map(e => e.floor))]%>
+<%let rooms = [...new Set(Room.map(e => e.roomNo))]%>
 <div class="room-page">
     <nav class="room-nav">
         <ul>
@@ -10,15 +10,21 @@
             <li>Menu3</li>
         </ul>
     </nav>
-    <div class="room-display-window">
+    <div class="room-main-window">
+        <div id="room-company-name">
+            <div class="room-cname"></div>
+            <div class="room-cemail"></div>
+            <div class="room-cphone"></div>
+        </div>
+        <div class="room-display-window">
         <% for (let block of blocks){%>
 
-            <div class="panel">
+            <div class="panel" id='<%=block%>'>
                 <div class="section1">
-                    <div class="sub-section1">
+                    <div class="sub-section11">
                         <%= block%>
                     </div>
-                    <div class="sub-section2">
+                    <div class="sub-section12">
                         <div class="room-heading">
                             <p>
                                 Rooms
@@ -34,7 +40,7 @@
                     </div>
                 </div>
                <div class="section2">
-                <div class="sub-section1">
+                <div class="sub-section21">
                     <div class="floor-heading">
                         <p>
                             Floors
@@ -48,13 +54,20 @@
                             <%}%>
                     </div>
                 </div>
-                <div class="sub-section2">
+                <div class="sub-section22">
                     <div class="grid-area">
-                        <%for(let floor of floors){%>
-                           <div class="grid-row">
-                            <%for(let room of rooms){%>
-                                <div class="grid-cell">
-                                    <%=floor%><%= room%>
+                        <%for(let room of rooms){%>
+                            <div class="grid-row">
+                                <%let status%>
+                               <%for(let floor of floors){%>
+                                <%for(let i of Room){%>
+                                    <%if(i.block==block && i.floor==floor && i.roomNo==room){%>
+                                        <%console.log(i)%>
+                                        <%if(i.status==true){status='green'}else{status='red'}%>
+                                        <%}%>
+                                    <%}%>
+                                <div class="grid-cell <%=status%>" onmouseover="displayCompany('<%=block%>','<%=floor%>','<%=room%>')" onmouseleave="resetText()" onclick="copyToClip()">
+                                    <div></div>
                                 </div>
                             <%}%>
                            </div>
@@ -62,10 +75,11 @@
                     </div>
                 </div>
                </div>
-                <%}%>
-
+               
             </div>
+            <%}%>
+        </div>
     </div>
 </div>
 
-<script src="/js/author/room,js"></script>
+<script src="/js/author/room.js"></script>

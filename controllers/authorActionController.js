@@ -145,10 +145,9 @@ module.exports.allot = async function (req, res) {
 
 module.exports.roomInfo =async (req,res)=>{
     let room = await RoomInfo.find()
-    console.log(typeof(room))
     return res.render('room_info',{
         layout : 'authorLayout',
         title : 'Room Info',
-        room : room
+        Room : room
     })
 }
