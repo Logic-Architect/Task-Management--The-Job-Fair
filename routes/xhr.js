@@ -1,6 +1,8 @@
 const express = require('express');
 const router =express.Router();
 
-// const authorXhrCon
+const xhrController = require('../controllers/xhrController');
+
+router.get('/view-company',xhrController.viewCompany)
 
 module.exports = router;
