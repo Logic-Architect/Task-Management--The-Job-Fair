@@ -24,64 +24,66 @@
                     <%= comp.address%>
                 </address>
             </div>
-            <div class="re-action">
-                <div class="volunteer-action">
-                    <p>
-                        <button onclick="openVolActionModal('<%=comp.id%>')">
-                            <i class="fa-solid fa-user-nurse"></i>
-                            Volunteer
-                        </button>
-                    </p>
-                    <div class="vol-action-modal-container">
-                        <div class="vol-action-background-controller modal-background-handler">
-
-                        </div>
-                        <div id="vol-action-modal-<%=comp.id%>" class="Modal">
-                            <div>
-                                <p onclick="closeModal()" class="close">X</p>
+            <%if(comp.verified){%>
+                <div class="re-action">
+                    <div class="volunteer-action">
+                        <p>
+                            <button onclick="openVolActionModal('<%=comp.id%>')">
+                                <i class="fa-solid fa-user-nurse"></i>
+                                Volunteer
+                            </button>
+                        </p>
+                        <div class="vol-action-modal-container">
+                            <div class="vol-action-background-controller modal-background-handler">
+    
                             </div>
-                            <div class="vol-action-modal">
-                                <div class="vol-action-section-prev">
-                                    <button onclick="prevVol('<%=comp.id%>')">&lt;</button>
+                            <div id="vol-action-modal-<%=comp.id%>" class="Modal">
+                                <div>
+                                    <p onclick="closeModal()" class="close">X</p>
                                 </div>
-                                <%let index = 0%>
-                                <div class="vol-action-section-panel">
-                                    <div class="vol-action-heading">
-                                        <p></p>
+                                <div class="vol-action-modal">
+                                    <div class="vol-action-section-prev">
+                                        <button onclick="prevVol('<%=comp.id%>')">&lt;</button>
                                     </div>
-                                    <div class="vol-action-vol-name">
-                                        absd
+                                    <%let index = 0%>
+                                    <div class="vol-action-section-panel">
+                                        <div class="vol-action-heading">
+                                            <p></p>
+                                        </div>
+                                        <div class="vol-action-vol-name">
+                                           
+                                        </div>
+                                        <div class="vol-action-vol-email">
+                                            
+                                        </div>
+                                        <div class="vol-action-vol-phone">
+                                           
+                                        </div>
+                                        <div class="vol-action-footer">
+                                            <button class="vol-action-add-<%=comp.id%>" onclick="removeVolAction('<%=comp.id%>')">
+                                                Remove
+                                            </button>
+                                        </div>
                                     </div>
-                                    <div class="vol-action-vol-email">
-                                        fdghdg
+    
+    
+                                    <div class="vol-action-section-next">
+                                        <button onClick="nextVol('<%=comp.id%>')">&gt;</button>
                                     </div>
-                                    <div class="vol-action-vol-phone">
-                                        sdfsdf
-                                    </div>
-                                    <div class="vol-action-footer">
-                                        <button class="vol-action-add" onclick="removeVolAction('<%=comp.id%>')">
-                                            Remove
-                                        </button>
-                                    </div>
-                                </div>
-
-
-                                <div class="vol-action-section-next">
-                                    <button onClick="nextVol('<%=comp.id%>')">&gt;</button>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    <div class="roomalloted">
+                        <p>
+                            <button>
+                                <i class="fa-solid fa-people-roof"></i>
+                                Room
+                            </button>
+                        </p>
+                    </div>
                 </div>
-                <div class="roomalloted">
-                    <p>
-                        <button>
-                            <i class="fa-solid fa-people-roof"></i>
-                            Room
-                        </button>
-                    </p>
-                </div>
-            </div>
+                <%}%>
         </div>
     </div>
     <div class="status">

@@ -89,11 +89,17 @@ removeVol = (a) => {
                 console.log(data);
 
 
-                volData = data.data;
+                if(data.data!=null){
+                    volData = data.data;
                 $(`#vol-action-modal-${id} .vol-action-heading p`).text(`Volunteer ${index + 1}`)
                 $(`#vol-action-modal-${id} .vol-action-vol-name`).text(data.data[index].name)
                 $(`#vol-action-modal-${id} .vol-action-vol-email`).text(data.data[index].email)
                 $(`#vol-action-modal-${id} .vol-action-vol-phone`).text(data.data[index].phone)
+                }
+                else{
+                    $(`#vol-action-modal-${id} .vol-action-heading p`).text('No Volunteers Alloted');
+                    $(`.vol-action-add-${id}`).fadeOut()
+                }
                 view()
             },
             error: function (error) {
@@ -128,10 +134,17 @@ removeVol = (a) => {
         $.ajax({
             type : 'get',
             url : `/author/xhr/remove-volunteer/?id=${id}&index=${index}`,
-            success : function(data){
+            success : async function(data){
                 console.log(data.message);
+                volData.splice(index,1)
                 prevVol(id);
-                nextVol(id);
+                if(volData.length==0){
+                    $(`#vol-action-modal-${id} .vol-action-heading p`).text('No Volunteers Alloted')
+                    $(`#vol-action-modal-${id} .vol-action-vol-name`).text('')
+                    $(`#vol-action-modal-${id} .vol-action-vol-email`).text('')
+                    $(`#vol-action-modal-${id} .vol-action-vol-phone`).text('')
+                    $(`.vol-action-add-${id}`).fadeOut()
+                }
             },
             error : function(err){
                 console.log(error.responseText);
