@@ -1,13 +1,11 @@
 
 .sign-in-modal{
-    /* border: 2px solid grey; */
     font-size: 3rem !important;
-    width: 35%;
+    width: 630px;
     height: 58%;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
+    justify-content: center;
 
     background-color:transparent;
     color: white;
@@ -18,7 +16,6 @@
     transform: translate(-50%, -50%);
     text-align: center;
 
-    padding: 10px;
     box-shadow: 0px 0px 25px 2px #f1f1f1;
     border-radius: 20px;
     transition-duration: 2000ms;
@@ -30,37 +27,98 @@
 .sign-in-modal:focus{
     border-radius: 20px;
 }
+
+.user-img{
+    top: -23px;
+    position: relative;
+}
+.user-img img{
+    height: 120px;
+    width: 126px;
+    border-radius: 50%;
+}
+
+.author-details{
+    top: -5vh;
+    position: relative;
+}
+
+p{
+    margin-top: 6vh;
+    margin-bottom: 2vh;
+}
 .sign-in{
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    width: 99% !important;
 }
 .sign-in form{
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    width: 80%;
+    width: 92%;
+    padding: 2vw;
+    padding-bottom: 0px;
 }
 .sign-in form div{
     display: flex;
     justify-content: space-between;
-    align-items: center;
     margin: 10px;
-    color:white;
     width: 100%;
 }
 .sign-in form div label{
     font-size: 2rem;
+    padding-bottom: 5px;
 }
+input{
+    width: 15vw;
+    color: white;
+    background-color: transparent;
+    border: none;
+}
+#submit{
+    width: 100px !important;
+    height: 34px;
+    background-color: #865ee1;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+}
+input[type="submit"]{
+    width: 100px;
+    font-size: 1.5rem;
+    cursor: pointer;    
+} 
+#submit:hover{
+    box-shadow: 0px 0px 10px 3px rgb(22, 17, 66);
+    transition-duration: 500ms;
+}
+
 .sign-up{
     transition-duration: 700ms;
 }
 .sign-up a{
-    font-size: 2rem;
+    color: red;
+    font-size: 1.1rem;
 }
 .sign-up:hover{
     transform: scale(1.1);
-    color: rgb(156, 20, 20) !important;
+    color: blue !important;
+}
+ @media only screen and (max-width: 635px) {
+
+    .sign-in-modal{
+        width: 99%;
+        height: 60%;
+    }
+    .sign-in form{
+        justify-content: flex-start;
+    }
+    .sign-in form div{
+        flex-direction: column;
+    }
+    .sign-in form div label{
+        text-align: left !important;
+    }
+    input{
+        width: 99%;
+    }
 }

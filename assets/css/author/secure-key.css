@@ -1,54 +1,8 @@
-.secure-key-center{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 80vh;
+p{
+    color: gray;
+    margin: 0;
+    margin-bottom: 7vh;
 }
-#secure-key-modal{
-    width: 50%;
-    height: 50%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    padding: 10px;
-    box-shadow: 0px 0px 3px 3px rgb(211, 37, 37);
-    border-radius: 20px;
-    transition-duration: 900ms;
-}
-#secure-key-modal:hover{
-    border-radius: 20px;
-    box-shadow: 0px 0px 3px 3px rgb(219, 56, 56);
-}
-#secure-key-modal:focus{
-    border-radius: 20px;
-}
-
-#secure-key-modal div p {
-    font-size: 2rem;
-    color: rgb(131, 29, 29);
-}
-.secure-key-form{
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.secure-key-form form{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 80%;
-}
-.secure-key-form form div{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 10px;
-    color:rgb(131, 29, 29) ;
-    width: 100%;
-}
-.secure-key-form form div label{
-    font-size: 1.3rem;
+input{
+    width: 172px;
 }

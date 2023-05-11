@@ -95,7 +95,7 @@ module.exports.signIn = function (req, res) {
 module.exports.signUp = function (req, res) {
     res.render('author-sign-up', {
         title: 'Register New Author',
-        layout: 'authorLayout'
+        layout: 'author-blank'
     })
 }
 
@@ -139,7 +139,7 @@ module.exports.verify = async function (req, res) {
 module.exports.secureKey = function (req, res) {
     res.render('secure-key', {
         title: 'Security Key',
-        layout: 'authorLayout',
+        layout: 'author-blank'
     })
 }
 
