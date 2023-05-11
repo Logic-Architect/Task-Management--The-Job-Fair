@@ -1,11 +1,16 @@
 <link rel="stylesheet" href="/css/author/author-sign-in.css">
-<div class="sign-in-center">
-    <div class="sign-in-modal animate__animated animate__zoomInDown">
+<!-- <div class="sign-in-center"> -->
+<div class="sign-in-modal animate__animated animate__zoomInDown">
+    <div class="user-img">
+        <img src="/images/author-sign-in/user.jpg" alt="">
+    </div>
+    <div class="author-details">
         <div>
             <p>
                 Sign In
             </p>
         </div>
+
         <div class="sign-in">
             <form action="/author/create-session" method="" autocomplete="off">
                 <div id="email-sec">
@@ -16,7 +21,10 @@
                     <label for="password">Password</label>
                     <input type="password" name="password" id="password" required placeholder="Enter Your Password">
                 </div>
-                <input type="submit" value="Sign In">
+                <div id="submit">
+                    <input type="submit" value="Sign In">
+                </div>
+
             </form>
         </div>
         <div class="sign-up">
@@ -24,4 +32,5 @@
         </div>
     </div>
 </div>
+<!-- </div> -->
 <script src="/js/author/author-sign-in.css"></script>

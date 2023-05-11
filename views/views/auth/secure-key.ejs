@@ -1,24 +1,27 @@
+<link rel="stylesheet" href="/css/author/author-sign-in.css">
 <link rel="stylesheet" href="/css/author/secure-key.css">
-<div class="secure-key-center animate__animated animate__zoomInDown">
-    <div id="secure-key-modal">
-        <div>
-            <p>
-                Verify Security Key
-            </p>
-        </div>
-        <div class="secure-key-form">
-            <form action="/author/verify-secure-key" method="post">
-                <div class="email-sec">
-                    <label for="email">Enter Your Email</label>
-                    <input type="email" name="email" id="email" required placeholder="Enter Your Email">
-                </div>
-                <div class="key-sec">
-                    <label for="key">Enter the Security Key</label>
-                    <input type="text" name="key" id="key" required placeholder="Copy Security Key Here" title='Contact Root Author for Security Key'>
-                </div>
+<div class="secure-key-modal sign-in-modal animate__animated animate__zoomInDown">
+    <div>
+        <p>
+            Verify Security Key
+        </p>
+    </div>
+    <div class="secure-key-form sign-in">
+        <form action="/author/verify-secure-key" method="post">
+            <div class="email-sec">
+                <label for="email">Enter Your Email</label>
+                <input type="email" name="email" id="email" required placeholder="Enter Your Email">
+            </div>
+            <div class="key-sec">
+                <label for="key">Enter the Security Key</label>
+                <input type="text" name="key" id="key" required placeholder="Copy Security Key Here"
+                    title='Contact Root Author for Security Key'>
+            </div>
+            <div id="submit">
                 <input type="submit" value="Verify">
-            </form>
-        </div>
+            </div>
+
+        </form>
     </div>
 </div>
 <script src="/js/author/secure-key.js"></script>

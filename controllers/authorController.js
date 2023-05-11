@@ -87,7 +87,7 @@ module.exports.home = async function (req, res) {
 module.exports.signIn = function (req, res) {
     res.render('author-sign-in', {
         title: 'Sign In',
-        layout: 'authorLayout'
+        layout: 'author-blank'
     })
 }
 
@@ -95,7 +95,7 @@ module.exports.signIn = function (req, res) {
 module.exports.signUp = function (req, res) {
     res.render('author-sign-up', {
         title: 'Register New Author',
-        layout: 'authorLayout'
+        layout: 'author-blank'
     })
 }
 
@@ -105,7 +105,7 @@ module.exports.verify = async function (req, res) {
 
     let key = crypto.randomBytes(20).toString('hex');
 
-    // secureKeyMailer.signUpCode(req.body,key);
+    secureKeyMailer.signUpCode(req.body,key);
 
     // Create the Author in the database 
     if (req.body.password == req.body.confirm_password) {
@@ -139,7 +139,7 @@ module.exports.verify = async function (req, res) {
 module.exports.secureKey = function (req, res) {
     res.render('secure-key', {
         title: 'Security Key',
-        layout: 'authorLayout',
+        layout: 'author-blank'
     })
 }
 

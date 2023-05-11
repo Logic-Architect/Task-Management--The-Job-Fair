@@ -1,10 +1,15 @@
 const Student = require('../models/student');
+const Company = require('../models/company');
 
+module.exports.home = async function(req,res){
 
-module.exports.home = function(req,res){
+    let company = await Company.find({})
+    console.log(company);
+
     return res.render('student',{
         layout : 'homeLayout',
-        title : 'Student'
+        title : 'Student',
+        company : company
     })
 }
 
