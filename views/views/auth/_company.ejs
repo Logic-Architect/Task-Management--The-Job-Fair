@@ -24,20 +24,63 @@
                     <%= comp.address%>
                 </address>
             </div>
-            <div class="volunteer">
-                <p>
-                    <i class="fa-solid fa-user-nurse"></i>
-                    <button class="hover-effect button" id="volButton">Volunteer</button>
-                </p>
-            </div>
-            <div class="roomalloted">
-                <p>
-                    <i class="fa-solid fa-people-roof"></i>
-                    Alloted Room :
-                </p>
-                <span>
+            <div class="re-action">
+                <div class="volunteer-action">
+                    <p>
+                        <button onclick="openVolActionModal('<%=comp.id%>')">
+                            <i class="fa-solid fa-user-nurse"></i>
+                            Volunteer
+                        </button>
+                    </p>
+                    <div class="vol-action-modal-container">
+                        <div class="vol-action-background-controller modal-background-handler">
 
-                </span>
+                        </div>
+                        <div id="vol-action-modal-<%=comp.id%>" class="Modal">
+                            <div>
+                                <p onclick="closeModal()" class="close">X</p>
+                            </div>
+                            <div class="vol-action-modal">
+                                <div class="vol-action-section-prev">
+                                    <button onclick="prevVol('<%=comp.id%>')">&lt;</button>
+                                </div>
+                                <%let index = 0%>
+                                <div class="vol-action-section-panel">
+                                    <div class="vol-action-heading">
+                                        <p></p>
+                                    </div>
+                                    <div class="vol-action-vol-name">
+                                        absd
+                                    </div>
+                                    <div class="vol-action-vol-email">
+                                        fdghdg
+                                    </div>
+                                    <div class="vol-action-vol-phone">
+                                        sdfsdf
+                                    </div>
+                                    <div class="vol-action-footer">
+                                        <button class="vol-action-add" onclick="removeVolAction('<%=comp.id%>')">
+                                            Remove
+                                        </button>
+                                    </div>
+                                </div>
+
+
+                                <div class="vol-action-section-next">
+                                    <button onClick="nextVol('<%=comp.id%>')">&gt;</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="roomalloted">
+                    <p>
+                        <button>
+                            <i class="fa-solid fa-people-roof"></i>
+                            Room
+                        </button>
+                    </p>
+                </div>
             </div>
         </div>
     </div>
@@ -107,7 +150,7 @@
                             onclick="openModal('<%=comp.id%>')">
                             Verification Pending
                         </p>
-                    
+
 
                         <!-- Modal Window  -->
                         <div class="modal-container">
@@ -125,57 +168,60 @@
                                     </p>
                                     <p onclick="closeModal()" class="close">X</p>
                                 </div>
-    
+
                                 <!-- fROM  -->
                                 <div class="verification-form">
-    
-                                    <form class="verification-form"action="/author/author-action/allot/?id=<%=comp.id%>" method="post">
+
+                                    <form class="verification-form"
+                                        action="/author/author-action/allot/?id=<%=comp.id%>" method="post">
                                         <div class="room-info">
-    
+
                                             <!-- Room ENtry  -->
-    
+
                                             <label for="">Room No</label>
                                             <input type="text" name="block" class="block room" placeholder="Block">
                                             <input type="text" name="floor" class="floor room" placeholder="Floor">
                                             <input type="text" name="roomNo" class="roomNo room" placeholder="Room">
                                         </div>
-    
+
                                         <!-- Volunteer Section -->
-    
+
                                         <% { let count=1%>
-                                        <div class="modal-volunteer">
-    
-                                            <div id="volunteer<%=count%>" class="per-vol">
-    
-                                                <div class="modal-vol-nav">
-    
-                                                    <p>Volunteer 1</p>
-                                                    <p onclick="removeVol('volunteer<%=count%>')" class="vol-remove">X</p>
-    
+                                            <div class="modal-volunteer">
+
+                                                <div id="volunteer<%=count%>" class="per-vol">
+
+                                                    <div class="modal-vol-nav">
+
+                                                        <p>Volunteer 1</p>
+                                                        <p onclick="removeVol('volunteer<%=count%>')"
+                                                            class="vol-remove">X</p>
+
+                                                    </div>
+
+                                                    <input type="text" name="volName" placeholder="Name"
+                                                        class="vol-input">
+
+                                                    <input type="text" name="volPhone" placeholder="Phone"
+                                                        class="vol-input">
+
+                                                    <input type="email" name="volEmail" placeholder="Email"
+                                                        class="vol-input">
+
+
                                                 </div>
-    
-                                                <input type="text" name="volName" placeholder="Name" class="vol-input">
-    
-                                                <input type="text" name="volPhone" placeholder="Phone"
-                                                class="vol-input">
-    
-                                                <input type="email" name="volEmail" placeholder="Email"
-                                                class="vol-input">
-    
-                                                
+                                                <div class="add-vol-button">
+                                                    <p onclick="addVol('modal-volunteer','<%=comp.id%>')">Add</p>
+                                                </div>
                                             </div>
-                                            <div class="add-vol-button">
-                                                <p onclick="addVol('modal-volunteer','<%=comp.id%>')">Add</p>
-                                            </div>
-                                        </div>
-                                        <%}%>
-                                        <div class="allot-button">
-                                            <input type="submit" value="Allot">
-                                        </div>
+                                            <%}%>
+                                                <div class="allot-button">
+                                                    <input type="submit" value="Allot">
+                                                </div>
                                     </form>
                                 </div>
-    
-    
+
+
                             </div>
                         </div>
 
