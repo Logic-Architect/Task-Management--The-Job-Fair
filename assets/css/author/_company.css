@@ -23,6 +23,15 @@
     padding: 30px;
     font-size: 0.8rem;
 }
+.re-action{
+    display: flex;
+    margin-top: 40px;
+}
+.volunteer-action{
+    margin-right: 8px;
+}
+
+
 /* Right Side COntent  */
 
 /* Container  */
@@ -277,4 +286,15 @@ label,p{
     justify-content: flex-end;
     align-items: center;
     padding: 2px 15px;
+}
+
+.vol-action-modal{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+vol-action-section-panel{
+    
 }

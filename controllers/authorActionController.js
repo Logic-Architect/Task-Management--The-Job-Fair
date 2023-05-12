@@ -3,16 +3,48 @@ const Allots = require('../models/alllots');
 const Author = require('../models/author');
 const RoomInfo = require('../models/rooms');
 
-module.exports.removeCompany = function (req, res) {
+module.exports.removeCompany = async function (req, res) {
     // console.log('Query',req.query)
-    Company.findByIdAndDelete(req.query.id)
-        .then(deleted => {
-            console.log('Company Registraion Deleted', deleted);
-            return res.redirect('back')
-        })
-        .catch(err => {
-            console.log('Error deleting the COmpany from Database', err);
-        })
+
+    // update author if company is verified 
+   try {
+     let company =await Company.findById(req.query.id);
+     if(company.verified){
+         Author.findById(company.author)
+         .then(author=>{
+             author.authorised.pull(company._id);
+             author.save()
+         })
+         .catch(err=>{
+             console.log('Error Pulling the cmpany after deletion',err);
+         })
+     }
+     // update roomInfo if room alloted 
+     let alloted = await Allots.findOne({cid : company._id});
+     if(alloted.roomAlloted){
+         let room = await RoomInfo.findOne({
+             block : alloted.block,
+             floor : alloted.floor,
+             roomNo : alloted.roomNo
+         })
+         await RoomInfo.findByIdAndUpdate(room._id,{status : false});
+     }
+     // remove entry from allotment schema 
+     if(alloted){
+        await Allots.findByIdAndDelete(alloted._id)
+     }
+     // remove company from company database 
+     Company.findByIdAndDelete(req.query.id)
+         .then(deleted => {
+             console.log('Company Registraion Deleted', deleted);
+             return res.redirect('back')
+         })
+         .catch(err => {
+             console.log('Error deleting the COmpany from Database', err);
+         })
+   } catch (error) {
+    console.log(error)
+   }
 
 }
 
