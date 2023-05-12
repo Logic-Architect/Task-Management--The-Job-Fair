@@ -17,9 +17,12 @@
     color: white;
 }
 #room-company-name{
+    display: none;
     position: absolute;
     top: 155px;
     left: 90px;
+    border: 1px solid white;
+    background-color: red;
     /* border: 1px solid white; */
 }
 .room-cname{
@@ -33,8 +36,9 @@
     margin: 5px;
 }
 .room-display-window {
-    display: flex;
-    margin-top: 200px;
+    /* display: flex; */
+    /* margin-top: 200px; */
+    float: right;
     /* flex-direction: column; */
     /* justify-content: space-evenly; */
 }

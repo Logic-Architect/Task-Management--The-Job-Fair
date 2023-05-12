@@ -3,11 +3,9 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    /* padding: 0px 13px; */
     padding-left: 13px;
     padding-right: 13px;
     background-color:  #254C82;
-    z-index: 1000;
 }
 /* HEADING JOB FAIR  */
 .job-fair i{
@@ -38,7 +36,6 @@ a:hover{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    /* margin: 5px; */
 }
 .horizontal-list li{
     padding-right: 1.5vw;
@@ -58,7 +55,6 @@ a:hover{
 
 .Icon{
     position: fixed;
-    /* z-index: 2; */
     width: 100vw;
     padding-left: 10vw;
     background-color: white;
@@ -70,7 +66,6 @@ a:hover{
 
 .navigation-bar{
     position: fixed;
-    /* z-index: 2; */
     font-size: 1.5rem;
     height: 10vh;
     width: 40vw;
@@ -85,7 +80,6 @@ a:hover{
     padding-left:1.5vw;
 }
 .Responsive-view{
-    /* z-index: 2; */
     display: flex;
     justify-content: space-between;
     align-items: center;

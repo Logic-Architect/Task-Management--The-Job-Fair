@@ -1,29 +1,23 @@
-.company-blog{
-    /* color: red; */
+.Company-blog{
     display: flex;
     align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
-    width: 195;
-    border: 2px solid white;
-    margin: 15px;
+    margin: 6px;
     padding: 10px;
-    height: 50%;
     border-bottom: 1px solid blue;
 }
+
 /* Left Side Content  */
 .info{
     width: 60%;
     display: flex;
     flex-direction: column;
-    align-content: space-around;
 }
-.name{
-    border: 0px;
-}
+
 .name span{
     font-size: 1.7rem;
-
+    font-weight: bold;
 }
 .details{
     padding: 30px;
@@ -42,52 +36,77 @@
 /* Item1 Remove Button  */
 .remover{
     align-self: self-end;
+    /* border: 2px solid red; */
 }
-.remover button{
+.remove-button{
+    position: relative;
+    top: -13px;
+    right: 11px;
     flex-basis: 10%;
     margin: 5px;
-    display: flex;
+    display: none;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     border: none;
-    background-color: rgb(214, 20, 20);
-    border-radius: 10px;
+    width: 100px;
+    background-color: red;
+    /* border-radius: 20px; */
     padding: 3px;
     color: rgb(255, 255, 255);
 }
-.remover button:hover{
-    background-color: rgb(243, 236, 236);
-    color: red;
+.remove-button:hover{
+    background-color: gray;
+    color: white;
 }
-
+.remove-icon{
+    display: flex;
+    justify-content: flex-end;
+    
+}
+.remove-icon i{
+    color: black;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    height: 35px;
+    width: 30px;
+}
+.remove-icon:hover{
+    cursor: pointer;
+}
+.remove-icon i:hover{
+    
+    border-radius: 20%;
+    background-color: rgb(227, 226, 226);
+    transition-duration: 1000;
+}
 /* Item2 Hiring Status  */
 .hiring-status{
-    flex-basis:50%;
+    height: 110px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    width: 100%;
 }
 .status-line{
     font-size: 1.5rem;
 }
 .date-of-hiring{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 39%;
+    width: 100%;
     text-align: center;
 }
 .date-of-hiring p{
     font-size: 1.5rem;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
 }
+
 /* Item 3 Vreification Status  */
 .verification-status{
-    flex-basis: 25%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -98,7 +117,7 @@
     justify-content: center;
     align-items: center;
     width: 70%;
-    height: 85%;
+    height: 35px;
     margin: 10px;
     border: 1px solid green;
 }
@@ -107,7 +126,7 @@
     justify-content: center;
     align-items: center;
     width: 70%;
-    height: 85%;
+    height: 46px;
     margin: 10px;
     border: 1px solid green;
 }
@@ -124,6 +143,18 @@
     cursor: pointer;
 }
 
+/* Responsiveness */
+@media only screen and (max-width: 710px) {
+    .company-blog{
+        flex-direction: column;
+    }
+    .info{
+        width: 100%;
+    }
+    .status{
+        width: 100%;
+    }
+}
 /* MOdal WIndows  */
 
 .modal-background-handler{
@@ -131,47 +162,54 @@
     height: 100vh;
     width: 100vw;
     opacity: 0.5;
-    background-color: rgb(102, 146, 241);
+    /* background-color: white; */
     position: absolute;
     top: 0px;
     left: 0px;
 }
-
 .Modal{
     /* visibility: hidden; */
     display: none;
-    border: 1px solid black;
+    /* border: 1px solid black; */
     position: fixed;
     top: 20vh;
     left: 30vw;
     height: 390px;
     width: 550px;
     background-color: white;
-    color: black;
+    color: white;
     overflow: scroll;
     /* position:relative; */
     z-index: 2;
-}
-.close{
-    position: absolute;
-    top: 5px;
-    right: 5px;
-    border: 1px solid black;
-}
-.close:hover{
-    cursor: pointer;
-}
-.vHeading{
-    font-size: 1.4rem;
 }
 .verification-comp-info{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-content: space-around;
-    border: 1px solid black;
+    /* border: 1px solid black; */
     margin: 5px;
+    background-color: #254C82;
 }
+.close{
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    width: 25px;
+}
+.close:hover{
+    background-color: red;
+}
+.close:hover{
+    cursor: pointer;
+}
+label,p{
+    color: black !important;
+}
+.vHeading{
+    font-size: 1.4rem;
+}
+
 .verification-comp-info p{
     text-align: center;
 }

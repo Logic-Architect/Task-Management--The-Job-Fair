@@ -1,4 +1,4 @@
-<div class="company-blog">
+<div class="Company-blog company-blog-<%=comp.id%>" onCLick="toggleShowedButtons('<%=comp.id%>')">
     <div class="info">
         <div class="name">
             <span>
@@ -42,8 +42,11 @@
         </div>
     </div>
     <div class="status">
-        <div class="remover">
-            <button>
+        <div class="remover-<%=comp.id%> remover">
+            <div class="remove-icon">
+                <i class="fa-solid fa-ellipsis-vertical"  onclick="showRemover('<%=comp.id%>')"></i>
+            </div>
+            <button class="remove-button">
                 <a href="/author/author-action/remove-company/?id=<%= comp.id%>">Remove</a>
             </button>
         </div>
@@ -111,10 +114,10 @@
 
                         <!-- Modal Window  -->
                         <div class="modal-container">
-                            <div class="modal-background-handler">
-                            </div>
+                            
                             <div class="Modal" id="verification-modal-<%=comp.id%>">
-
+                                <div class="modal-background-handler">
+                                </div>
                                 <!-- Company DtaILS  -->
                                 <div class="verification-comp-info">
                                     <p class="vHeading">
@@ -126,7 +129,7 @@
                                     <p onclick="closeModal()" class="close">X</p>
                                 </div>
     
-                                <!-- fROM  -->
+                                <!-- fORM  -->
                                 <div class="verification-form">
     
                                     <form class="verification-form"action="/author/author-action/allot/?id=<%=comp.id%>" method="post">

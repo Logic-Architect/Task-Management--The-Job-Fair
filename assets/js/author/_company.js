@@ -78,3 +78,14 @@ let showVolunteers = (id)=>{
     console.log(id);
     $.ajax()
 }
+
+//remove button
+showRemover = (id)=>{
+    $(`.remover-${id} button`).toggle();
+}
+
+// toggleShowedButtons=(id)=>{
+//     event.stopPropagation();
+//     $(`.remover-${id} button`).toggle();
+// }
+

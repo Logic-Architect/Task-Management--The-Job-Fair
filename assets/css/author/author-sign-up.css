@@ -16,11 +16,12 @@ p {
 }
 
 .sign-up-form {
-    width: 100%;
+    width: 99%;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding:2px
+    padding:2px;
+    margin: 5px;
 }
 
 .sign-up-form form {
