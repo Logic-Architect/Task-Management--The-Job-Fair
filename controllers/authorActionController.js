@@ -81,7 +81,7 @@ module.exports.allot = async function (req, res) {
     if(!allot){
         Allots.create({
             cid: req.query.id,
-            roomAlloted :true,
+            // roomAlloted :true,
             block : req.body.block,
             floor : req.body.floor,
             roomNo : req.body.roomNo,
@@ -94,7 +94,12 @@ module.exports.allot = async function (req, res) {
                         email : req.body.volEmail,
                         phone : req.body.volPhone
                     }
-                    allot.volunteers.push(volObj);
+                    if(volObj.name && volObj.email && volObj.phone){
+                        allot.volunteers.push(volObj);
+                    }
+                    if(allot.block&&allot.floor&&allot.roomNo){
+                        allot.roomAlloted = true
+                    }
                     allot.save();
                 }else{
                     for(let i=0;i<req.body.volName.length;i++){
@@ -103,7 +108,12 @@ module.exports.allot = async function (req, res) {
                             email : req.body.volEmail[i],
                             phone : req.body.volPhone[i]
                         }
-                        allot.volunteers.push(volObj);
+                        if(volObj.name && volObj.email && volObj.phone){
+                            allot.volunteers.push(volObj);
+                        }
+                    }
+                    if(allot.block&&allot.floor&&allot.roomNo){
+                        allot.roomAlloted = true
                     }
                     allot.save()
                 }
