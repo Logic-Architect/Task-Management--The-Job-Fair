@@ -166,30 +166,47 @@
 }
 /* MOdal WIndows  */
 
+/* MOdal WIndows  */
+
 .modal-background-handler{
     display: none;
     height: 100vh;
     width: 100vw;
     opacity: 0.5;
-    /* background-color: white; */
-    position: absolute;
+    background-color: rgb(102, 146, 241);
+    position: fixed;
     top: 0px;
     left: 0px;
+    z-index: 1;
 }
+
 .Modal{
-    /* visibility: hidden; */
     display: none;
-    /* border: 1px solid black; */
     position: fixed;
     top: 20vh;
     left: 30vw;
     height: 390px;
     width: 550px;
     background-color: white;
-    color: white;
+    color: black;
+    box-shadow: 0px 0px 255px 2px #f1f1f1;
     overflow: scroll;
-    /* position:relative; */
     z-index: 2;
+}
+.close{
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    width: 34px;
+    text-align: center;
+}
+.close:hover{
+    cursor: pointer;
+    background-color: red;
+}
+.vHeading{
+    font-size: 2rem;
+    font-weight: bold;
 }
 .verification-comp-info{
     display: flex;
@@ -197,31 +214,15 @@
     justify-content: center;
     align-content: space-around;
     /* border: 1px solid black; */
+    color: black;
+    background-color: white;
     margin: 5px;
-    background-color: #254C82;
+    font-family: sans-serif;
 }
-.close{
-    position: absolute;
-    top: 5px;
-    right: 5px;
-    width: 25px;
-}
-.close:hover{
-    background-color: red;
-}
-.close:hover{
-    cursor: pointer;
-}
-label,p{
-    color: black !important;
-}
-.vHeading{
-    font-size: 1.4rem;
-}
-
 .verification-comp-info p{
     text-align: center;
 }
+
 
 /* form styling  */
 .verification-form{
@@ -235,12 +236,20 @@ label,p{
 
 .room-info{
     margin: 10px 3px;
-    border: 1px solid black;
-
 }
+label{
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+::placeholder {
+    color: black;
+    opacity: 1;
+  }
 .room{
     width: 55px;
     margin: 2px 6px;
+    background-color: gray;
+    color: black;
 }
 .room:-webkit-autofill,
 .room:-webkit-autofill:hover, 
@@ -253,12 +262,14 @@ label,p{
 }
 
 .modal-volunteer{
-    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     overflow: scroll;
     height: 40%;
 }
 .per-vol:nth-child(2n){
-    background-color: rgb(170, 170, 233);
+    background-color: lightgray;
     /* color: white; */
 }
 .modal-vol-nav{

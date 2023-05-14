@@ -60,7 +60,7 @@
     background-color: #254C82;
     color: white;
     font-weight: bold;
-    width: 78vw;
+    width: 80vw;
 }
 .company-sort-navbar ul{
     list-style: none;
@@ -76,14 +76,9 @@
     justify-content: space-between;
     align-items: center;
 }
-/* #company-window-navbar div li{
-    border-radius: 20px;
-    padding:4px;
+#search-bar{
+    margin-right: 15px;
 }
-#company-window-navbar li:hover{
-    box-shadow: 0px 0px 20px 2px #f1f1f1;
-    transition-duration: 2000;
-} */
 .companys {
     position: absolute;
     top: 80px;
