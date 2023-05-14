@@ -42,7 +42,7 @@ module.exports.viewVolunteer = async function(req,res){
         let allot = await Allotment.findOne({cid : req.query.id})
     
         if(allot){
-          if(allot.volunteers.length!=0){
+          if(allot.volunteers.length>0){
             await Allotment.findById(allot._id)
             .then(allots=>{
                 return res.status(200).json({
