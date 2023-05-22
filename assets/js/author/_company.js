@@ -89,14 +89,14 @@ removeVol = (a) => {
                 console.log(data);
 
 
-                if(data.data!=null){
+                if (data.data != null) {
                     volData = data.data;
-                $(`#vol-action-modal-${id} .vol-action-heading p`).text(`Volunteer ${index + 1}`)
-                $(`#vol-action-modal-${id} .vol-action-vol-name`).text(data.data[index].name)
-                $(`#vol-action-modal-${id} .vol-action-vol-email`).text(data.data[index].email)
-                $(`#vol-action-modal-${id} .vol-action-vol-phone`).text(data.data[index].phone)
+                    $(`#vol-action-modal-${id} .vol-action-heading p`).text(`Volunteer ${index + 1}`)
+                    $(`#vol-action-modal-${id} .vol-action-vol-name`).text(data.data[index].name)
+                    $(`#vol-action-modal-${id} .vol-action-vol-email`).text(data.data[index].email)
+                    $(`#vol-action-modal-${id} .vol-action-vol-phone`).text(data.data[index].phone)
                 }
-                else{
+                else {
                     $(`#vol-action-modal-${id} .vol-action-heading p`).text('No Volunteers Alloted');
                     $(`.vol-action-add-${id}`).fadeOut()
                 }
@@ -115,7 +115,7 @@ removeVol = (a) => {
             $(`#vol-action-modal-${id} .vol-action-vol-name`).text(volData[index].name)
             $(`#vol-action-modal-${id} .vol-action-vol-email`).text(volData[index].email)
             $(`#vol-action-modal-${id} .vol-action-vol-phone`).text(volData[index].phone)
-        }else{
+        } else {
             index++;
         }
     }
@@ -126,19 +126,19 @@ removeVol = (a) => {
             $(`#vol-action-modal-${id} .vol-action-vol-name`).text(volData[index].name)
             $(`#vol-action-modal-${id} .vol-action-vol-email`).text(volData[index].email)
             $(`#vol-action-modal-${id} .vol-action-vol-phone`).text(volData[index].phone)
-        }else{
+        } else {
             index--;
         }
     }
-    removeVolAction = (id)=>{
+    removeVolAction = (id) => {
         $.ajax({
-            type : 'get',
-            url : `/author/xhr/remove-volunteer/?id=${id}&index=${index}`,
-            success : async function(data){
+            type: 'get',
+            url: `/author/xhr/remove-volunteer/?id=${id}&index=${index}`,
+            success: async function (data) {
                 console.log(data.message);
-                volData.splice(index,1)
+                volData.splice(index, 1)
                 prevVol(id);
-                if(volData.length==0){
+                if (volData.length == 0) {
                     $(`#vol-action-modal-${id} .vol-action-heading p`).text('No Volunteers Alloted')
                     $(`#vol-action-modal-${id} .vol-action-vol-name`).text('')
                     $(`#vol-action-modal-${id} .vol-action-vol-email`).text('')
@@ -146,7 +146,7 @@ removeVol = (a) => {
                     $(`.vol-action-add-${id}`).fadeOut()
                 }
             },
-            error : function(err){
+            error: function (err) {
                 console.log(error.responseText);
             }
         })
@@ -157,12 +157,21 @@ removeVol = (a) => {
 }
 
 //remove button
-showRemover = (id)=>{
+showRemover = (id) => {
     $(`.remover-${id} button`).toggle();
 }
 
-// toggleShowedButtons=(id)=>{
-//     event.stopPropagation();
-//     $(`.remover-${id} button`).toggle();
-// }
+// Add Volunteer Button in VOlunteer Modal 
+addVolAction = (id) => {
+    // $(`#vol-action-section-panel-${id} div`).fadeOut()
+    $(`#vol-action-section-panel-${id} div`).html(`
+    <form action="" method="post">
+    <p>Enter Volunteers Details</p>
+    <input type="email" class="vol-action-input-email" required placeholder="Enter New Volunteer Email" name="email">
+    <input type="phone" class="vol-action-input-phone" required placeholder="Enter New Volunteer Phone" name="phone">
+    <input type="Name" class="vol-action-input-name" required placeholder="Enter New Volunteer Name" name="name">
+    <button type="submit" onclick="submitVolAddForm('<%=comp.id%>')">Add Now</button>
+    </form>
+    `)
+}
 

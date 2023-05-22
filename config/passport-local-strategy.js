@@ -144,7 +144,8 @@ passport.setAuthenticatedUser = function (req, res, next) {
         res.locals.user = {
             id: req.user._id,
             email: req.user.email,
-            type: req.user.type
+            type: req.user.type,
+            name : req.user.name || req.user.cname
         }
     }
     next();

@@ -1,15 +1,27 @@
 const Student = require('../models/student');
 const Company = require('../models/company');
+const Allots = require('../models/alllots');
 
 module.exports.home = async function(req,res){
 
-    let company = await Company.find({})
-    console.log(company);
+    let company = await Company.find({verified : true}).sort('ascending')
+
+    let companyInfo = [];
+    for(let i of company){
+        let allots = await Allots.findOne({cid : i._id});
+
+        companyInfo.push({
+            info : i,
+            allotment : allots
+        })
+    }
+
+    console.log(companyInfo);
 
     return res.render('student',{
         layout : 'homeLayout',
         title : 'Student',
-        company : company
+        company : companyInfo
     })
 }
 
