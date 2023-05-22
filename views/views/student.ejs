@@ -1,9 +1,36 @@
-<link rel="stylesheet" href="/css/student/home.css">
+<link rel="stylesheet" href="/css/student/student.css">
 
-This is student page
-<%for(comp of company){%>
-    <%= comp.cname%>
-    <%}%>
+<div class="window">
+    <div class="heading-pane">
+        <p>Welcome <%=locals.user.name%></p>
+    </div>
+    <div class="navbar-pane">
+        <ul>
+            <li>Menu1</li>
+            <li>Menu2</li>
+            <li>Menu3</li>
+            <li>Menu4</li>
+        </ul>
+    </div>
+    <div class="panel">
+       <%for(let comp of company){%>
+        <div class="company-info">
+            <div class="main-panel">
+                <div class="company-name">
+                    <%=comp.info.cname%>
+                </div>
+                <div class="company-email">
+                    <%=comp.info.email%>
+                </div>
+                
+            </div>
+            <aside>
+                
+            </aside>
+        </div>
+        <%}%>
+    </div>
+</div>
 
 
-<script src="/js/student/home.js"></script>
+<script src="/js/student/student.js"></script>

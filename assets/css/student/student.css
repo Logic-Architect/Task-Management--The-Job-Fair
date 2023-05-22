@@ -1,0 +1,28 @@
+.window{
+    display: grid;
+    grid-template-rows: 15% 10% auto;
+    height: 70vh;
+    width: 100%;
+}
+.heading-pane{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid blue;
+}
+.heading-pane p{
+    font-size: 3.5rem;
+    text-align: center;
+}
+.navbar-pane{
+    border: 1px solid blue;
+}
+.navbar-pane ul{
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    list-style: none;
+    justify-content: space-evenly;
+}
+.company-info{
+    border: 1px solid blue;
+}

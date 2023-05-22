@@ -41,13 +41,14 @@
                                 <div>
                                     <p onclick="closeModal()" class="close">X</p>
                                 </div>
-                                <div class="vol-action-modal">
+                                <div class="vol-action-modal" id="vol-action-modal-<%=comp.id%>">
                                     <div class="vol-action-section-prev">
                                         <button onclick="prevVol('<%=comp.id%>')">&lt;</button>
                                     </div>
                                     <%let index=0%>
-                                        <div class="vol-action-section-panel">
-                                            <div class="vol-action-heading">
+                                        <div class="vol-action-section-panel" id="vol-action-section-panel-<%=comp.id%>">
+                                           <div>
+                                             <div class="vol-action-heading">
                                                 <p></p>
                                             </div>
                                             <div class="vol-action-vol-name">
@@ -60,11 +61,16 @@
 
                                             </div>
                                             <div class="vol-action-footer">
-                                                <button class="vol-action-add-<%=comp.id%>"
-                                                    onclick="removeVolAction('<%=comp.id%>')">
+                                                <button onclick="removeVolAction('<%=comp.id%>')">
                                                     Remove
                                                 </button>
                                             </div>
+                                           </div>
+
+                                           
+                                            <button onclick="addVolAction('<%=comp.id%>')">
+                                                Allot More Volunteers
+                                            </button>
                                         </div>
 
 
@@ -194,7 +200,7 @@
 
                                         <% { let count=1%>
                                             <div class="modal-volunteer">
-                                                
+
                                                 <div id="volunteer<%=count%>" class="per-vol">
 
                                                     <div class="modal-vol-nav">
@@ -221,9 +227,9 @@
                                                 </div>
                                             </div>
                                             <%}%>
-                                            <div class="allot-button">
-                                                <input type="submit" value="Allot">
-                                            </div>
+                                                <div class="allot-button">
+                                                    <input type="submit" value="Allot">
+                                                </div>
                                     </form>
                                 </div>
 

@@ -81,3 +81,7 @@ module.exports.removeVolunteer =async (req,res)=>{
         console.log('Catch Error',error);
     }
 }
+
+module.exports.addVolunteer = function(req,res){
+    console.log()
+}
