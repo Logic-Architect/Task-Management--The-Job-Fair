@@ -39,7 +39,7 @@
                             </div>
                             <div id="vol-action-modal-<%=comp.id%>" class="Modal">
                                 <div>
-                                    <p onclick="closeModal()" class="close">X</p>
+                                    <p onclick="closeModal()" class="close" id="vol-close">X</p>
                                 </div>
                                 <div class="vol-action-modal">
                                     <div class="vol-action-section-prev">
@@ -169,7 +169,7 @@
                                     <p class="vHeading">
                                         <%=comp.cname%>
                                     </p>
-                                    <p>
+                                    <p class="vInfo">
                                         <%=comp.email%>
                                     </p>
                                     <p onclick="closeModal()" class="close">X</p>

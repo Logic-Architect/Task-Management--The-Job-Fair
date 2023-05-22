@@ -53,7 +53,7 @@ addVol = (a, id) => {
 
         <div class="modal-vol-nav">
         <p>Volunteer ${count}</p>
-        <p onclick="removeVol('volunteer${count}')">X</p>
+        <p onclick="removeVol('volunteer${count}')" class="vol-remove">X</p>
         </div>
         
         <input type="text" name="volName" placeholder="Name">
