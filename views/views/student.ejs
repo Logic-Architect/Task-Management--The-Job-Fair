@@ -2,8 +2,11 @@
 
 <div class="window">
     <div class="heading-pane">
-        <p>Welcome <%=locals.user.name%></p>
+        <p>Welcome <%=locals.user.name%>
+        </p>
     </div>
+
+    <!-- Future Work -->
     <div class="navbar-pane">
         <ul>
             <li>Menu1</li>
@@ -12,23 +15,73 @@
             <li>Menu4</li>
         </ul>
     </div>
+
     <div class="panel">
-       <%for(let comp of company){%>
-        <div class="company-info">
-            <div class="main-panel">
-                <div class="company-name">
-                    <%=comp.info.cname%>
+        <%for(let comp of company){%>
+            <div class="company-info">
+                <div class="minipanel-1">
+                    <div class="comp-details">
+                        <div class="company-name">
+                            <%=comp.info.cname%>
+                        </div>
+                        <div class="company-email-phone">
+                            <div class="company-email">
+                                <%=comp.info.email%><span> , </span>
+                            </div>
+                            <div class="company-phone">
+                                <%=comp.info.phone%>
+                            </div>
+                        </div>
+                        <div class="company-address">
+                            <%=comp.info.address%>
+                        </div>
+                    </div>
+                    <div class="company-hiringDate-TotalVacancy">
+                        <div class="hiringDate">
+                            <div class="HiringFrom">
+                                <span class="bold">HiringFrom: </span>
+                                <%=comp.info.hiringFrom.getDate()%><span> - </span>
+                                    <%=comp.info.hiringFrom.getMonth()%><span> - </span>
+                                        <%=comp.info.hiringFrom.getFullYear()%>
+                            </div>
+                            <div class="HiringUpto">
+                                <span class="bold">HiringUpto: </span>
+                                <%=comp.info.hiringUpto.getDate()%><span> - </span>
+                                    <%=comp.info.hiringUpto.getMonth()%><span> - </span>
+                                        <%=comp.info.hiringUpto.getFullYear()%>
+                            </div>
+                        </div>
+                        <div class="TotalVacancy">
+                            <span class="bold">Total Vacancy: </span>
+                            <%=comp.info.totalVacancy%>
+                        </div>
+                    </div>
+                    <div class="comp-status">
+                        <button>Status-Pending</button>
+                    </div>
                 </div>
-                <div class="company-email">
-                    <%=comp.info.email%>
+                <div class="minipanel-2">
+                    <div class="comp-room-info">
+                        <%=comp.allotment.block%>
+                            <%=comp.allotment.floor%><span> </span>
+                                <%=comp.allotment.roomNo%>
+                    </div>
+                    <div class=for-branch>
+                        <div>
+                            <span>Branch: &nbsp;</span>
+                            <%let j = 0%>
+                            <%for(let i of comp.info.forBranch){%>
+                                <%=i%>
+                                <%if(j!=comp.info.forBranch.length-1){%>
+                                    <span>&nbsp; / &nbsp;</span>
+                                    <%}%>
+                                        <%j++%>
+                                    <%}%>
+                        </div>
+                    </div>
                 </div>
-                
             </div>
-            <aside>
-                
-            </aside>
-        </div>
-        <%}%>
+            <%}%>
     </div>
 </div>
 

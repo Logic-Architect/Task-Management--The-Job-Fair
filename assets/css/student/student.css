@@ -1,21 +1,25 @@
 .window{
     display: grid;
-    grid-template-rows: 15% 10% auto;
-    height: 70vh;
+    /* grid-template-rows: 16% 10% auto; */
     width: 100%;
+    /* overflow: scroll; */
 }
 .heading-pane{
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 1px solid blue;
 }
 .heading-pane p{
-    font-size: 3.5rem;
+    font-size: 7rem;
+    font-family: fantasy;
+    color:#102645;
+    font-variant: small-caps;
     text-align: center;
+    text-decoration: underline;
+    margin: 0;
 }
 .navbar-pane{
-    border: 1px solid blue;
+    display: none;
 }
 .navbar-pane ul{
     display: grid;
@@ -23,6 +27,137 @@
     list-style: none;
     justify-content: space-evenly;
 }
+
 .company-info{
-    border: 1px solid blue;
+    display: flex;
+    justify-content: space-between;
+    flex-direction:row;
+    padding: 10px;
+}
+.minipanel-1{
+    width: 68vw;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.comp-details{
+    width: 95%;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.company-name{
+    text-align: center;
+    font-size: 2rem;
+    font-family: sans-serif;
+    font-weight: bold;
+    text-decoration-line: underline;
+    text-transform: uppercase;
+    padding:5px;
+}
+.company-email-phone{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    color:#254C82;
+    font-family: sans-serif;
+    font-style: italic;
+    font-weight: bold;
+}
+.company-address{
+    display: flex;
+    justify-content: center;
+    color:#042048;
+    font-family: sans-serif;
+    font-style: italic;
+    font-weight: bold;
+}
+.company-hiringDate-TotalVacancy{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 93%;
+    padding:20px;
+}
+.bold{
+    font-size: 1rem;
+    font-weight: bold;
+}
+.hiringDate{
+    display: flex;
+    justify-content: space-between;
+    width: 60%;
+    padding-left:20px;
+    padding-right: 20px;
+    height: 97%;
+}
+.HiringFrom{
+    background-color: #254c829c;
+    text-align: center;
+    padding: 12px;
+    border-radius: 15px;
+}
+.HiringUpto{
+    background-color: #254c829c;
+    text-align: center;
+    padding: 12px;
+    border-radius: 15px;
+}
+.TotalVacancy{
+    background-color: #254c829c;
+    text-align: center;
+    padding: 12px;
+    border-radius: 15px;
+}
+.comp-status{
+    height: 15%;
+}
+.comp-status button{
+    background-color: red;
+    height: 100%;
+    font-size: 1rem;
+    color: white;
+    border: none;
+    border-radius: 14px;
+    cursor: pointer;
+}
+.company-info:nth-child(n){
+    background-color: rgb(207, 228, 246);
+}
+.company-info:nth-child(2n){
+    background-color: rgb(211, 239, 239);
+}
+.minipanel-2{
+    width: 25vw;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+}
+.comp-room-info{
+    border: 3px solid black;
+    width: 52%;
+    height: 50%;
+    margin: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+.for-branch{
+    border: 3px solid black;
+    width: 52%;
+    height: 50%;
+    margin: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+    font-weight: bold;
+}
+.for-branch div{
+    text-align: center;
 }
